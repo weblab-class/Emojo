@@ -19,6 +19,8 @@ from time import sleep
 #https://stackoverflow.com/questions/7714216/add-new-field-to-every-document-in-a-mongodb-collection
 #TODO: better word-matching / autocomplete (e.g. "smile" = "smiley", "happy"="happy face")
 
+#TODO: set up delay when fetching elements in case page takes some time to load 
+
 """
 helpful: 
 https://stackoverflow.com/questions/5419/python-unicode-and-the-windows-console/32176732#32176732
@@ -83,7 +85,8 @@ for r in range(1, emoji_list_length+1):
 
     description_link = emoji_detail.find_element_by_xpath(".//tr[3]/td[2]/a").get_attribute("href")
         
-    # driver.get(description_link)
+    driver.get(description_link)
+
     #TODO: get aliases
     # aliases = 
 
