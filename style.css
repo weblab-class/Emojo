@@ -1,0 +1,107 @@
+:root {
+	--main-orange-red: #F9812A;
+	--main-orange: #FC6600; 
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes longfade {
+   0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+html *
+{
+   font-family: cursive !important; 
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        height:50px;
+    }
+}
+#navbar-override {
+	background-image: linear-gradient(to bottom right, var(--main-orange-red), var(--main-orange));
+}
+
+.title-text {
+	font-size: 64px;
+	position: relative;
+	top: 2em;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.navbar-default .navbar-toggle {
+  float: right; /* Move navbar toggle to left */
+}
+
+.dot {
+  height: 125px;
+  width: 125px;
+  background-color: orange;
+  border-radius: 50%;
+}
+
+.animate {
+  animation-name: fade-in;
+  animation-duration: 2s;
+}
+
+.animatewait {
+  animation-name: fade-in;
+  animation-duration: 2s
+}
+
+#quote {
+	background-color: #FC6600; 
+	border-radius: 155px;
+	padding: 15px;
+}
+
+
+#title-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(80vh);
+	position: relative;
+	left: 1.3em;
+}
+
+#inspire {
+	padding-bottom: 30px;
+}
+
+
+
+h1 {
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: center;
+	font-size: 100px;
+	padding-bottom: 60px;
+}
+
+h2 {
+	text-align: center;
+	padding-bottom: 60px;
+}
+
+h3 {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
