@@ -56,12 +56,12 @@ html *
 
 .animate {
   animation-name: fade-in;
-  animation-duration: 2s;
+  animation-duration: 0.75s;
 }
 
 .animatewait {
-  animation-name: fade-in;
-  animation-duration: 2s
+  animation-name: longfade;
+  animation-duration: 1.5s
 }
 
 #quote {
