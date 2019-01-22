@@ -1,5 +1,9 @@
 // takes plaintext and adds emoji / replaces text with emoji
 // import emojify.html, fuzz package
+if (user._id !== undefined) {
+	document.getElementById('log').innerText="LOGOUT😘"
+}
+
 
 // get user input from emojify.html
 // use fuzz to match post words to database keywords

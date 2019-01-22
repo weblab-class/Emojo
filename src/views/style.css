@@ -1,0 +1,329 @@
+:root {
+	--main-dark: #F4ABD2;
+	--main-light: #F7D9DE; 
+	--main-mid: #CC9CD8;
+	--main-back: #F7E8E8;
+	--main-hovered: #be91c9;
+	--main-clicked: #af86ba;
+	--main-shadow: #be91c980;
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes longfade {
+   0%   {opacity: 0;}
+    25%  {opacity: 0;}
+    50%  {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+html * {
+   font-family: cursive !important; 
+}
+
+html {
+   background-color: var(--main-back);
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        height:50px;
+    }
+}
+
+.label {
+	padding: 25px;
+}
+
+#navbar-override {
+	background-image: linear-gradient(to bottom right, var(--main-light), var(--main-dark));
+}
+
+.title-text {
+	font-size: 64px;
+	position: relative;
+	top: 2em;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+}
+
+.navbar-default .navbar-toggle {
+  float: right; /* Move navbar toggle to left */
+}
+
+.dot {
+  height: 125px;
+  width: 125px;
+  background-color: var(--main-mid);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.animate {
+  animation-name: fade-in;
+  animation-duration: 0.75s;
+}
+
+.animatewait {
+  animation-name: longfade;
+  animation-duration: 1.5s
+}
+
+.navbar-brand {
+	z-index: 2;
+}
+
+#quote {
+	background-color: var(--main-dark); 
+	border-radius: 155px;
+	padding: 15px;
+}
+
+.btn-primary {
+	background-color: var(--main-mid);
+	outline-color: var(--main-mid);
+	border-color: var(--main-mid);
+}
+
+.btn-primary:visited {
+	background-color: var(--main-clicked);
+	outline-color: var(--main-clicked);
+	border-color: var(--main-clicked) !important;
+}
+
+.btn-primary:focus {
+	background-color: var(--main-clicked);
+	outline-color: var(--main-clicked);
+	border-color: var(--main-clicked) !important;
+	box-shadow: var(--main-shadow) !important;
+}
+
+.btn-primary:hover {
+	background-color: var(--main-hovered);
+	outline-color: var(--main-hovered);
+	border-color: var(--main-hovered) !important;
+}
+
+.btn-primary:active {
+	background-color: var(--main-clicked) !important;
+	outline-color: var(--main-clicked);
+	border-color: var(--main-clicked) !important;
+}
+
+
+#title-page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(80vh);
+	position: relative;
+	left: 1.3em;
+	background-color: var(--main-back);
+}
+
+#emojify-page {
+	align-content: center;
+	justify-content: center;
+	align-self: center;
+	text-align: center;
+	background-color: var(--main-back);
+}
+
+body {
+	background-color: var(--main-back);
+}
+
+
+#emojify-input:focus {
+    outline: none !important;
+    border-color: #CC9CD8;
+    box-shadow: 0 0 10px #CC9CD8;
+}
+
+#inspire {
+	padding-bottom: 30px;
+}
+
+
+
+h1 {
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	text-align: center;
+	font-size: 100px;
+	padding-bottom: 60px;
+}
+
+h2 {
+	text-align: center;
+	padding-bottom: 60px;
+}
+
+h3 {
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+h4 {
+	text-overflow:ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 60px;
+	padding-bottom: 40px;
+
+}
+
+p {
+	font-size: 23px;
+}
+
+/*Stuff for toggles!*/
+*
+{
+    user-select: none;
+    -webkit-tap-highlight-color:transparent;
+}
+
+#app-cover
+{
+    display: table;
+    width: 600px;
+    margin: 80px auto;
+    counter-reset: button-counter;
+}
+
+.toggle-button-cover
+{
+    display: table-cell;
+    position: relative;
+    width: 200px;
+    height: 140px;
+    box-sizing: border-box;
+}
+
+.button-cover
+{
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 0 #e7efef;
+}
+
+.button-cover:before
+{
+    counter-increment: button-counter;
+    content: counter(button-counter);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #e7efef;
+    font-size: 12px;
+    line-height: 1;
+    padding: 5px;
+}
+
+.button-cover, .knobs, .layer
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.button
+{
+    position: relative;
+    top: 50%;
+    width: 74px;
+    height: 36px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+}
+
+.button.r, .button.r .layer
+{
+    border-radius: 100px;
+}
+
+.button.b2
+{
+    border-radius: 2px;
+}
+
+.checkbox
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.knobs
+{
+    z-index: 2;
+}
+
+.layer
+{
+    width: 100%;
+    background-color: #cc9cd840;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+#button-16 .knobs:before
+{
+    content: 'REP.';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 4px;
+    background-color: var(--main-mid);
+    border-radius: 2px;
+    transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+}
+
+#button-16 .checkbox:active + .knobs:before
+{
+    width: 46px;
+}
+
+#button-16 .checkbox:checked:active + .knobs:before
+{
+    margin-left: -26px;
+}
+
+#button-16 .checkbox:checked + .knobs:before
+{
+    content: 'ADD';
+    left: 42px;
+    background-color: var(--main-dark);
+}
+
+#button-16 .checkbox:checked ~ .layer
+{
+    background-color: #f4abd23b;
+}
