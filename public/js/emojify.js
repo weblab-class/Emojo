@@ -1,10 +1,6 @@
 // takes plaintext and adds emoji / replaces text with emoji
 // import emojify.html, fuzz package
 
-if (user._id !== undefined) {
-	document.getElementById('log').innerText="LOGOUT😘"
-}
-
 console.log(fuzzball.ratio("fuzz", "fuzzy"));
 //TODO: get user input from emojify.html
 // id="emojify-input"
@@ -14,6 +10,18 @@ console.log(fuzzball.ratio("fuzz", "fuzzy"));
 
 // TODO: get toggle state. replace / append emojis 
 // id="button-16"
+
+function main() {
+	get('/api/whoami', {}, function(user) {
+		updateButton(user);
+	});
+}
+
+function updateButton(user) {
+	if (user._id !== undefined) {
+		document.getElementById('log').innerText="LOGOUT😘";
+	}
+}
 
 // TODO:trigger on button click
 // id="emojifyBtn"
@@ -25,3 +33,5 @@ console.log(fuzzball.ratio("fuzz", "fuzzy"));
     // add post to db
     // add ID to user.posts
     // post: content, author, timestamp
+
+main();
