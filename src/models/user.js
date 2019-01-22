@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Define the schema
-const UserModelSchema = new mongoose.Scheme ({
+const UserModelSchema = new mongoose.Schema ({
 	name 		: String,
 	googleid 	: String,
 	posts 		: Array,
