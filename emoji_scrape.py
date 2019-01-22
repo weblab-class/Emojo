@@ -42,7 +42,11 @@ collection = db["Emojipedia"]
     
 """ set up Selenium driver """
 delay = 100
-driver = webdriver.Chrome(executable_path = "chromedriver.exe")
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")   
+driver = webdriver.Chrome(executable_path = "chromedriver.exe", chrome_options=chrome_options) # this runs browser without window
+
+# driver = webdriver.Chrome(executable_path = "chromedriver.exe")
 
 
 """ scrape """
@@ -54,14 +58,14 @@ emoji_list = driver.find_element_by_class_name("emoji-list")
 emoji_list_length = len(emoji_list.find_elements_by_xpath(".//tbody/tr"))
 print("emoji list length: ", emoji_list_length)
 
-for r in range(231, emoji_list_length+1): ###TODO: update r
+for r in range(3170, emoji_list_length+1): ###TODO: update r
 # for row in emoji_list.find_elements_by_xpath(".//tr"):
     print("row ", r)
     # Every emoji by codePoint: https://emojipedia.org/emoji/
 
 
     driver.get("https://emojipedia.org/emoji/")
-    sleep(2) 
+    sleep(1) 
     # iterate through each row in table
 
     emoji_list = driver.find_element_by_class_name("emoji-list")
@@ -72,13 +76,20 @@ for r in range(231, emoji_list_length+1): ###TODO: update r
     # split character, string 
     name = row.find_element_by_xpath(".//td[1]/a/span").get_attribute("innerHTML") # 😀 Grinning Face
     name = name.strip()[2:]
+    name = name.split(":")[0] #disregard skin color for now
+
+    # if emoji of same already in collection (yellow skin color), skip same emoji of other colors
+    if collection.count_documents({"name": name}) > 0:
+        print(name, " already included")
+        continue
+
     codePoints = row.find_element_by_xpath(".//td[2]").get_attribute("innerHTML") #U+1F600 
     codePoints = [i.strip() for i in codePoints.split(",")] #convert string to list
 
     # click on link, get fields from table, create entry
     link = row.find_element_by_xpath(".//td[1]/a").get_attribute("href")
     driver.get(link)
-    sleep(2) # so I don't crash the website :')  also for page to load
+    sleep(1) # so I don't crash the website :')  also for page to load
     
     emoji_detail = driver.find_element_by_class_name("emoji-detail")
     
@@ -98,6 +109,7 @@ for r in range(231, emoji_list_length+1): ###TODO: update r
     description_link = emoji_detail.find_element_by_xpath(".//tr[3]/td[2]/a").get_attribute("href")
         
     driver.get(description_link)
+    sleep(1)
 
     # get aliases
     # if aliases exist, aliases = [Strings]. Else, aliases = []. 
@@ -122,7 +134,7 @@ for r in range(231, emoji_list_length+1): ###TODO: update r
     # would use set() but set is not a datatype accepted by mongo Schema
     keywords = [name] + tags + aliases
 
-    print("keywords: ", keywords)
+    # print("keywords: ", keywords)
     print("name: ", name)
     print("character: ", character)
     print("codePoint: ", codePoints)
