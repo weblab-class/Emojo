@@ -5,9 +5,11 @@ const User = require('./models/user');
 
 // set up passport configs
 passport.use(new GoogleStrategy({
-  clientID: '222656727670-9t30b8acniei92msuj14if0a7h136adr.apps.googleusercontent.com', // config variables
-  clientSecret: '-S17nlahTZzO5Cfr0VJaDswh',
-  callbackURL: '/auth/google/callback'
+  // clientID: '222656727670-9t30b8acniei92msuj14if0a7h136adr.apps.googleusercontent.com', // config variables
+  // clientSecret: '-S17nlahTZzO5Cfr0VJaDswh',
+  clientID    : process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL : '/auth/google/callback'
 }, function(accessToken, refreshToken, profile, done) {
   User.findOne({
     'googleid': profile.id

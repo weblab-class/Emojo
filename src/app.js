@@ -71,8 +71,7 @@ app.use(function(err, req, res, next) {
 });
 
 // port config
-const port = 3000; // config variable
+// const port = 3000; // config variable
+const port = (process.env.PORT || 3000);
 const server = http.Server(app);
-server.listen(port, function() {
-  console.log('Server running on port: ' + port);
-});
+server.listen(process.env.PORT || 5000);
