@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
-
+require("dotenv").config();
 
 
 // local dependencies
