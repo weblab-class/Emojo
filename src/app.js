@@ -19,9 +19,6 @@ const api = require('./routes/api');
 // initialize express app
 const app = express();
 
-// attempt
-// app.use(fuzz());
-
 // set POST request body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
