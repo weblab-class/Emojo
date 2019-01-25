@@ -21,6 +21,9 @@ function updateButton(user) {
 	if (user._id !== undefined) {
 		document.getElementById('log').innerText="LOGOUT😘";
 	}
+	else {
+		document.getElementById('log').innerText="LOGIN📂";
+	}
 }
 
 // TODO:trigger on button click
@@ -33,5 +36,3 @@ function updateButton(user) {
     // add post to db
     // add ID to user.posts
     // post: content, author, timestamp
-
-main();
