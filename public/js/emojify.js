@@ -25,7 +25,7 @@ main();
 // id="emojify-input"
 
 user_input = document.getElementById("emojify-input").value;
-console.log("user input")
+console.log("user input: ", user_input);
 
 // TODO: access emoji data
 
