@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>EM😮JIFY</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+
+<body id="back">
+<!-- What follows is the navbar -->
+<nav id="navbar-override" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="index.html">EM😮J😮</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse order-0 order-md-0" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="index.html">HOME🏡</a>
+      <a class="nav-item nav-link" href="#">SEARCH🔍</a>
+      <a class="nav-item nav-link" href="feed.html">FEED😋</a>
+    </div>
+    <div class="navbar-nav ml-auto">
+      <a id="log" class="nav-item nav-link" href="./auth/google">LOGIN📂</a>
+    </div>
+  </div>
+
+</nav>
+<!-- End of navbar -->
+<div id="emojify-page" class="container-fluid">
+  <h4 style="padding-top: 50px;">EM😮JIFY</h4>
+  <p>Enter your text below to begin EM😮JIFYING™!!! Feel free to change the options to get your optimal text result!!!</p>      
+  <p>  </p>      
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+                <textarea id="emojify-input" class="form-control" rows="20" cols="80" placeholder="Enter text here..."></textarea>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="container">
+        <div class="row-lg-4">
+            <div class="col">
+                <h5 style="margin: 30px;">Select whether you want the EM😮JIFIER™ to replace your text with emojis or add them to the end of words</h5>
+                <div class="button b2" id="button-16" style="margin-top: 50px; margin-bottom: 50px;">
+                    <input type="checkbox" class="checkbox">
+                    <div class="knobs"></div>
+                    <div class="layer"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row-lg-4">
+            <div class="col">
+                <h5 style="margin-top: 30px;margin-bottom: 40px;">When you are done, press this button to see your text EM😮JIFIED™</h5>
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="emojifyBtn" style="margin-top: 40px;">EM😮JIFY MY TEXT📝</button>
+            </div>
+        </div>
+        <div class="row-lg-4">
+            <div class="col">
+                <h5 style="margin-top: 30px;margin-bottom: 40px;">Once you like how your text came out, feel free to post it for everyone to see!!!</h5>
+                <button type="button" class="btn btn-primary btn-lg btn-block" id="postBtn" style="margin-top: 40px;">POST📌</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>-->
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.js"></script>
+
+
+<!-- script for string matching -->
+<script charset="UTF-8" src="dist/fuzzball.umd.min.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/emojify.js"></script>
+
+
+</body>
+</html>
