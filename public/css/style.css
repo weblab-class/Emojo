@@ -89,6 +89,14 @@ html {
 	padding: 15px;
 }
 
+#post {
+  background-color: var(--main-dark); 
+  border-radius: 155px;
+  padding: 30px;
+  margin-bottom: 20px;
+
+}
+
 .btn-primary {
 	background-color: var(--main-mid);
 	outline-color: var(--main-mid);
@@ -131,6 +139,14 @@ html {
 	background-color: var(--main-back);
 }
 
+#feed-page {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  height: calc(80vh);
+  background-color: var(--main-back);
+}
+
 #emojify-page {
 	align-content: center;
 	justify-content: center;
@@ -154,7 +170,10 @@ body {
 	padding-bottom: 30px;
 }
 
-
+#username {
+  font-size: 15px;
+  color: black;
+}
 
 h1 {
 	text-overflow:ellipsis;
@@ -183,6 +202,15 @@ h4 {
 	font-size: 60px;
 	padding-bottom: 40px;
 
+}
+
+h5 {
+  font-size: 1.4rem;
+}
+
+h6 {
+  font-size: 13px;
+  color: gray;
 }
 
 p {
