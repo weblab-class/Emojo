@@ -31,7 +31,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// TODO: get toggle state. replace / append emojis 
 	let toggle = document.getElementById("button-16");
 	
-	console.log("button state: ", toggle.checked);
+	console.log("button state: ", toggle.value);
 
 }
 //TODO:  takes plaintext and adds emoji / replaces text with emoji
