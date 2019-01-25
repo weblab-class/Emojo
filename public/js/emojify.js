@@ -16,24 +16,30 @@ function updateButton(user) {
 	}
 }
 
+main();
+
 // CODE FOR IMPLEMENTING EMOJIFIER
 
-// takes plaintext and adds emoji / replaces text with emoji
-// import emojify.html, fuzz package
-
-console.log(fuzzball.ratio("fuzz", "fuzzy"));
+//TODO:  takes plaintext and adds emoji / replaces text with emoji
 //TODO: get user input from emojify.html
 // id="emojify-input"
 
+document.getElementById("emojify-input").value;
+
 // TODO: access emoji data
+
+// TODO: import emojify.html, fuzz package
+
+console.log(fuzzball.ratio("fuzz", "fuzzy"));
+
 // TODO: use fuzz to match post words to database keywords
 
 // TODO: get toggle state. replace / append emojis 
 // id="button-16"
 
-// IF REPLACE 
+// TODO: IF REPLACE 
 
-// ELSE (APPEND=DEFAULT)
+// TODO: ELSE (APPEND=DEFAULT)
 
 
 
@@ -48,4 +54,4 @@ console.log(fuzzball.ratio("fuzz", "fuzzy"));
     // add ID to user.posts
     // post: content, author, timestamp
 
-main();
+
