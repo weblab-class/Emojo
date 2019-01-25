@@ -4,8 +4,8 @@ function main() {
 		updateButton(user);
 	});
 
-	get('/api/emoji', {}, function(emoji) {
-		renderEmojiDatabase(emoji);
+	get('/api/emoji', {}, function(emojis) {
+		renderEmojiDatabase(emojis);
 	  });
 }
 
@@ -27,7 +27,7 @@ main();
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
 // TODO: access emoji data (Atlas)
-function renderEmojiDatabase(emoji) {
+function renderEmojiDatabase(emojis) {
 	console.log(emoji[0]);
 	// return emojiDB;
 }
