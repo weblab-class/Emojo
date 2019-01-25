@@ -1,4 +1,4 @@
-// Code for Updating login/logout button
+// Code for Updating login/logout button //
 function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
@@ -18,20 +18,28 @@ function updateButton(user) {
 
 main();
 
-// CODE FOR IMPLEMENTING EMOJIFIER
+// CODE FOR IMPLEMENTING EMOJIFIER //
 
+
+
+// trigger on button click
+// let emojifyBtn = document.getElementById("emojifyBtn");
+function emojifyMyText() { // function name also used in emojify.html (change carefully)
+	user_input = document.getElementById("emojify-input").value;
+	console.log("user input: ", user_input);	
+
+
+}
 //TODO:  takes plaintext and adds emoji / replaces text with emoji
 //TODO: get user input from emojify.html
-// id="emojify-input"
 
-user_input = document.getElementById("emojify-input").value;
-console.log("user input: ", user_input);
+
 
 // TODO: access emoji data
 
 // TODO: fuzz package
-fuzz = require('fuzzball');
-console.log(fuzz.ratio("fuzz", "fuzzy"));
+// fuzz = require('fuzzball');
+// console.log(fuzz.ratio("fuzz", "fuzzy"));
 
 // TODO: use fuzz to match post words to database keywords
 
@@ -44,8 +52,7 @@ console.log(fuzz.ratio("fuzz", "fuzzy"));
 
 
 
-// TODO:trigger on button click
-// id="emojifyBtn"
+
 
 //TODO: Post. worry about data structure later
 // id="postBtn"
