@@ -24,4 +24,12 @@ router.get('/emojify.html', function(req, res) {
   res.sendFile('emojify.html', { root: 'src/views' });
 });
 
+router.get('/feed.html', function(req, res) {
+  res.sendFile('feed.html', {root: "src/views" });
+})
+
+router.get('/search.html', function(req, res) {
+  res.sendFile('search.html', {root: "src/views" });
+})
+
 module.exports = router;
