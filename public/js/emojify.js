@@ -3,6 +3,10 @@ function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
 	});
+
+	get('/api/emoji', {}, function(emoji) {
+		renderEmojiDatabase(emoji);
+	  });
 }
 
 function updateButton(user) {
@@ -21,6 +25,11 @@ main();
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
 // TODO: access emoji data (Atlas)
+def renderEmojiDatabase(emoji) {
+	console.log(emoji[0]);
+	// return emojiDB;
+}
+
 
 // Import fuzz package
 console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
