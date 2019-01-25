@@ -1,4 +1,4 @@
-// Code for Updating login/logout button
+// Code for Updating login/logout button //
 function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
@@ -18,41 +18,48 @@ function updateButton(user) {
 
 main();
 
-// CODE FOR IMPLEMENTING EMOJIFIER
+// CODE FOR IMPLEMENTING EMOJIFIER //
 
-//TODO:  takes plaintext and adds emoji / replaces text with emoji
-//TODO: get user input from emojify.html
-// id="emojify-input"
+// TODO: access emoji data (Atlas)
 
-user_input = document.getElementById("emojify-input").value;
-console.log("user input: ", user_input);
+// Import fuzz package
+console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
 
-// TODO: access emoji data
+// trigger on button click
+// let emojifyBtn = document.getElementById("emojifyBtn");
+function emojifyMyText() { // function name also used in emojify.html (change carefully)
+	// get user plaintext
+	let user_input = document.getElementById("emojify-input").value;
+	console.log("user input: ", user_input);	
+	
+	// get toggle state: false = replace; true = add
+	let toggleState = document.getElementById("toggle-box").checked;
+	console.log("button checked: ", toggleState);
 
-// TODO: fuzz package
-fuzz = require('fuzzball');
-console.log(fuzz.ratio("fuzz", "fuzzy"));
-
-// TODO: use fuzz to match post words to database keywords
-
-// TODO: get toggle state. replace / append emojis 
-// id="button-16"
-
-// TODO: IF REPLACE 
-
-// TODO: ELSE (APPEND=DEFAULT)
+	// TODO: use fuzz to match post words to database keywords
 
 
 
-// TODO:trigger on button click
-// id="emojifyBtn"
+	// TODO: IF REPLACE 
 
-//TODO: Post. worry about data structure later
-// id="postBtn"
-// store post (copy from catbook)
-    // assign ID to post
-    // add post to db
-    // add ID to user.posts
-    // post: content, author, timestamp
+	// TODO: ELSE (APPEND=DEFAULT)
+
+	// display text 
+
+	// TODO: get emoji once & save? Switch between 2 posts when user toggles button in real time
+}
+
+
+function post(emojifiedPost) {
+	//TODO: Post to feed. worry about data structure later
+	// id="postBtn"
+	// store post (copy from catbook)
+		// assign ID to post
+		// add post to db
+		// add ID to user.posts
+		// post: content, author, timestamp
+}
+
+
 
 
