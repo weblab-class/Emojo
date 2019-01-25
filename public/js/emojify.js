@@ -25,9 +25,13 @@ main();
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
-	user_input = document.getElementById("emojify-input").value;
+	let user_input = document.getElementById("emojify-input").value;
 	console.log("user input: ", user_input);	
-
+	
+	// TODO: get toggle state. replace / append emojis 
+	let toggle = document.getElementById("button-16");
+	
+	console.log("button state: ", toggle.checked);
 
 }
 //TODO:  takes plaintext and adds emoji / replaces text with emoji
@@ -43,8 +47,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 // TODO: use fuzz to match post words to database keywords
 
-// TODO: get toggle state. replace / append emojis 
-// id="button-16"
+
 
 // TODO: IF REPLACE 
 
