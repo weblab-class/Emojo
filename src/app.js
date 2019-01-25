@@ -49,6 +49,11 @@ app.get(
   }
 );
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
 // set routes
 app.use('/', views);
 app.use('/api', api );
