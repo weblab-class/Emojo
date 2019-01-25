@@ -20,49 +20,48 @@ main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
+// TODO: access emoji data (Atlas)
 
+// Import fuzz package
+console.log("Importing fuzzball")
+let fuzz = require('fuzzball');
+console.log(fuzz.ratio("fuzz", "fuzzy"));
 
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
+	// get user plaintext
 	let user_input = document.getElementById("emojify-input").value;
 	console.log("user input: ", user_input);	
 	
-	// TODO: get toggle state. replace / append emojis 
-	let toggle = document.getElementById("toggle-box");
-	
-	console.log("button value: ", toggle.value);
-	console.log("button checked: ", toggle.checked);
+	// get toggle state: false = replace; true = add
+	let toggleState = document.getElementById("toggle-box").checked;
+	console.log("button checked: ", toggleState);
+
+	// TODO: use fuzz to match post words to database keywords
+
+
+
+	// TODO: IF REPLACE 
+
+	// TODO: ELSE (APPEND=DEFAULT)
+
+	// display text 
+
+	// TODO: get emoji once & save? Switch between 2 posts when user toggles button in real time
 }
-//TODO:  takes plaintext and adds emoji / replaces text with emoji
-//TODO: get user input from emojify.html
 
 
-
-// TODO: access emoji data
-
-// TODO: fuzz package
-// fuzz = require('fuzzball');
-// console.log(fuzz.ratio("fuzz", "fuzzy"));
-
-// TODO: use fuzz to match post words to database keywords
-
-
-
-// TODO: IF REPLACE 
-
-// TODO: ELSE (APPEND=DEFAULT)
+function post(emojifiedPost) {
+	//TODO: Post to feed. worry about data structure later
+	// id="postBtn"
+	// store post (copy from catbook)
+		// assign ID to post
+		// add post to db
+		// add ID to user.posts
+		// post: content, author, timestamp
+}
 
 
-
-
-
-//TODO: Post. worry about data structure later
-// id="postBtn"
-// store post (copy from catbook)
-    // assign ID to post
-    // add post to db
-    // add ID to user.posts
-    // post: content, author, timestamp
 
 
