@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
-const fuzz = require('fuzzball');
+const fuzzball = require('fuzzball');
 require("dotenv").config();
 
 
@@ -18,9 +18,6 @@ const api = require('./routes/api');
 
 // initialize express app
 const app = express();
-
-// attempt
-// app.use(fuzz());
 
 // set POST request body parser
 app.use(bodyParser.urlencoded({ extended: false }));
