@@ -23,7 +23,7 @@ main();
 // TODO: access emoji data (Atlas)
 
 // Import fuzz package
-console.log("trying fuzz: ", fuzzball.ratio("fuzz", "fuzzy"));
+console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
 
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
@@ -57,7 +57,7 @@ function post(emojifiedPost) {
 		// assign ID to post
 		// add post to db
 		// add ID to user.posts
-		// post: content, author, timestamp
+		// post: content, author, timestamp, tags
 }
 
 
