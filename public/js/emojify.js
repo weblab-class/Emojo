@@ -20,12 +20,14 @@ function updateButton(user) {
 	}
 }
 
+
+
 main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
 // TODO: access emoji data (Atlas)
-def renderEmojiDatabase(emoji) {
+function renderEmojiDatabase(emoji) {
 	console.log(emoji[0]);
 	// return emojiDB;
 }
