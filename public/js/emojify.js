@@ -23,9 +23,7 @@ main();
 // TODO: access emoji data (Atlas)
 
 // Import fuzz package
-console.log("Importing fuzzball")
-let fuzz = require('fuzzball');
-console.log(fuzz.ratio("fuzz", "fuzzy"));
+console.log("fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
 
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
