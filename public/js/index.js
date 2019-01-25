@@ -1,6 +1,5 @@
 function main() {
 	get('/api/whoami', {}, function(user) {
-		//updateButton(user);
 	});
 }
 
@@ -13,3 +12,4 @@ function updateButton(user) {
 	}
 }
 
+main();

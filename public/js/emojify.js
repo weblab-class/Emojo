@@ -36,3 +36,5 @@ function updateButton(user) {
     // add post to db
     // add ID to user.posts
     // post: content, author, timestamp
+
+main();
