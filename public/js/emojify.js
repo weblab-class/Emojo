@@ -24,13 +24,14 @@ main();
 //TODO: get user input from emojify.html
 // id="emojify-input"
 
-document.getElementById("emojify-input").value;
+user_input = document.getElementById("emojify-input").value;
+console.log("user input: ", user_input);
 
 // TODO: access emoji data
 
-// TODO: import emojify.html, fuzz package
-
-console.log(fuzzball.ratio("fuzz", "fuzzy"));
+// TODO: fuzz package
+fuzz = require('fuzzball');
+console.log(fuzz.ratio("fuzz", "fuzzy"));
 
 // TODO: use fuzz to match post words to database keywords
 
