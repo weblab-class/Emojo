@@ -34,7 +34,7 @@ function renderEmojiDatabase(emoji) {
 
 
 // Import fuzz package
-console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
+// console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
 
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
