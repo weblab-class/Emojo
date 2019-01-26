@@ -5,7 +5,7 @@ function main() {
 	});
 
 	get('/api/emoji', {}, function(emojis) {
-		console.log("get /api/emoji");
+		// console.log("get /api/emoji");
 		renderEmojiDatabase(emojis);
 	});
 }
@@ -27,30 +27,37 @@ main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
-// TODO: access emoji data (Atlas)
+// FIXME
+//  access emoji data (Atlas)
 function renderEmojiDatabase(emojis) {
-	console.log("get emojis")
-	console.log(emojis);
+	// console.log("get emojis")
+	// console.log(emojis);
 	// return emojiDB;
 }
 
 
-// Import fuzz package
-// const fuzz = require('fuzzball');
-// console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
+
 
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 	// get user plaintext
-	let user_input = document.getElementById("emojify-input").value;
-	console.log("user input: ", user_input);	
+	let emojifyInput = document.getElementById("emojify-input").value;
+	console.log("user input: ", emojifyInput);	
 	
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
 
-	// POST
+	// console.log("fuzz: ", fuzzball.ratio("fuzz", "fuzzy"));
+	console.log("grin: ", fuzzball.ratio("smile", "smiley face"));
+	console.log("partial: ", fuzzball.partial_ratio("smile", "smiley face"));
+
+	// POST text to api.js
+	// post('/api/emojifyInput', emojifyInput);
+	// post('/api/foo', {}, function() {
+	// 	//???
+	// })
 
 	// TODO: use fuzz to match post words to database keywords
 
