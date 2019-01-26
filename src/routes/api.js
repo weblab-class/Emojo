@@ -5,9 +5,14 @@ const connect = require('connect-ensure-login');
 // models
 const User = require('../models/user');
 const Story = require('../models/story');
+const Emoji = require('../models/emoji');
+
+// const Story = require('../models/story');
 // const Comment = require('../models/comment');
 
 const router = express.Router();
+
+// GET user input
 
 // api endpoints
 router.get('/whoami', function(req, res) {
@@ -30,6 +35,42 @@ router.get('/stories', function(req, res) {
     res.send(stories);
   });
 });
+
+router.get('/emoji', function(req, res) {
+  console.log("router get emoji");
+  console.log(req);
+
+  Emoji.find({}, function(err, emojis) {
+    console.log("Emoji.find emoji");
+    console.log(res);
+    res.send(emojis);
+  });
+});
+
+// router.get('/stories', function(req, res) {
+//   Story.find({}, function(err, stories) {
+//     res.send(stories);
+//   });
+// });
+
+// router.post(
+//   '/story',
+//   connect.ensureLoggedIn(),
+//   function(req, res) {
+//     User.findOne({ _id: req.user._id },function(err,user) {
+//       const newStory = new Story({
+//         'creator_id': user._id,
+//         'creator_name': user.name,
+//         'content': req.body.content,
+//       });
+
+//       user.set({ last_post: req.body.content });
+//       user.save(); // this is OK, because the following lines of code are not reliant on the state of user, so we don't have to shove them in a callback. 
+
+//       newStory.save(function(err,story) {
+//         // configure socketio
+//         if (err) console.log(err);
+//       });
 
 router.post(
   '/story',

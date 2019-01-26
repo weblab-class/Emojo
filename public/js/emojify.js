@@ -3,6 +3,11 @@ function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
 	});
+
+	get('/api/emoji', {}, function(emojis) {
+		console.log("get /api/emoji");
+		renderEmojiDatabase(emojis);
+	  });
 }
 
 function updateButton(user) {
@@ -16,14 +21,23 @@ function updateButton(user) {
 	}
 }
 
+
+
 main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
 // TODO: access emoji data (Atlas)
+function renderEmojiDatabase(emojis) {
+	console.log("get emojis")
+	console.log(emojis);
+	// return emojiDB;
+}
+
 
 // Import fuzz package
-console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
+// const fuzz = require('fuzzball');
+// console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
 
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
@@ -35,6 +49,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
+
+	// POST
 
 	// TODO: use fuzz to match post words to database keywords
 

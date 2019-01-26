@@ -2,6 +2,7 @@ const passport = require('passport');
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 
 const User = require('./models/user');
+// const Emoji = require('./models/emoji')
 
 // set up passport configs
 passport.use(new GoogleStrategy({
