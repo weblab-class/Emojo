@@ -5,7 +5,7 @@ function main() {
 	});
 
 	get('/api/emoji', {}, function(emojis) {
-		console.log("get /api/emoji");
+		// console.log("get /api/emoji");
 		renderEmojiDatabase(emojis);
 	  });
 }
@@ -49,7 +49,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
 
-	console.log("fuzz: ", fuzzball.ratio("fuzz", "fuzzy"));
+	// console.log("fuzz: ", fuzzball.ratio("fuzz", "fuzzy"));
+	console.log("grin: ", fuzzball.ratio("smile", "smiley face"));
+	console.log("partial: ", fuzzball.partial_ratio("smile", "smiley face"));
 
 	// POST text to api.js
 	// post('/api/emojifyInput', emojifyInput);
