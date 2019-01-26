@@ -7,7 +7,7 @@ function main() {
 	get('/api/emoji', {}, function(emojis) {
 		// console.log("get /api/emoji");
 		renderEmojiDatabase(emojis);
-	});
+	  });
 }
 
 function updateButton(user) {
@@ -55,16 +55,14 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// for each word, calculate ratio(word, keyword in keywords). return emoji with highest avg ratio???
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
-
-
-
-
-
-
 	// TODO: IF REPLACE 
+	if (!toggleState) {
 
+	}
 	// TODO: ELSE (APPEND=DEFAULT)
+	else {
 
+	}
 	
 	// display text 
 
