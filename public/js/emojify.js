@@ -34,6 +34,7 @@ function renderEmojiDatabase(emojis) {
 
 
 // Import fuzz package
+// const fuzz = require('fuzzball');
 // console.log("trying fuzz: ", fuzz.ratio("fuzz", "fuzzy"));
 
 // trigger on button click
@@ -46,6 +47,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
+
+	// POST
 
 	// TODO: use fuzz to match post words to database keywords
 

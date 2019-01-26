@@ -4,10 +4,14 @@ const connect = require('connect-ensure-login');
 
 // models
 const User = require('../models/user');
+const Emoji = require('../models/emoji')
+
 // const Story = require('../models/story');
 // const Comment = require('../models/comment');
 
 const router = express.Router();
+
+// GET user input
 
 // api endpoints
 router.get('/whoami', function(req, res) {
@@ -26,7 +30,7 @@ router.get('/user', function(req, res) {
 });
 
 router.get('/emoji', function(req, res) {
-  emoji.find({}, function(err, emojis) {
+  Emoji.find({}, function(err, emojis) {
     res.send(emojis);
   });
 });
