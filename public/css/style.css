@@ -166,6 +166,12 @@ body {
     box-shadow: 0 0 10px #CC9CD8;
 }
 
+#emojify-input:hover {
+    outline: none !important;
+    border-color: #CC9CD8;
+    box-shadow: 0 0 10px #CC9CD8;
+}
+
 #inspire {
 	padding-bottom: 30px;
 }
@@ -215,6 +221,46 @@ h6 {
 
 p {
 	font-size: 23px;
+}
+
+/*Stuff for tag input*/
+.choices__list--multiple .choices__item {
+  background-color: var(--main-mid) !important; 
+  border: var(--main-mid) !important;  
+}
+
+.choices[data-type*=text] .choices__button {
+  border-left: var(--main-mid) !important;
+}
+
+.choices:visited {
+  outline: none !important;
+  border-color: #CC9CD8 !important;
+  box-shadow: 0 0 10px #CC9CD8 !important;
+}
+
+.choices:focus {
+  outline: none !important;
+  border-color: #CC9CD8 !important;
+  box-shadow: 0 0 10px #CC9CD8 !important;
+}
+
+.choices:hover {
+  outline: none !important;
+  border-color: #CC9CD8 !important;
+  box-shadow: 0 0 10px #CC9CD8 !important;
+}
+
+.choices:active {
+  outline: none !important;
+  border-color: #CC9CD8 !important;
+  box-shadow: 0 0 10px #CC9CD8 !important;
+}
+
+.choices:focus-within {
+  outline: none !important;
+  border-color: #CC9CD8 !important;
+  box-shadow: 0 0 10px #CC9CD8 !important;
 }
 
 /*Stuff for toggles!*/

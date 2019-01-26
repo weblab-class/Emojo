@@ -7,7 +7,7 @@ function main() {
 	get('/api/emoji', {}, function(emojis) {
 		console.log("get /api/emoji");
 		renderEmojiDatabase(emojis);
-	  });
+	});
 }
 
 function updateButton(user) {
@@ -75,7 +75,3 @@ function post(emojifiedPost) {
 		// add ID to user.posts
 		// post: content, author, timestamp, tags
 }
-
-
-
-

@@ -9,6 +9,7 @@
     "start": "node src/app.js"
   },
   "dependencies": {
+    "choices.js": "^4.1.4",
     "connect-ensure-login": "^0.1.1",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
