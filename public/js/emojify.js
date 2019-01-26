@@ -49,17 +49,15 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
 
-	// console.log("fuzz: ", fuzzball.ratio("fuzz", "fuzzy"));
-	console.log("grin: ", fuzzball.ratio("smile", "smiley face"));
-	console.log("partial: ", fuzzball.partial_ratio("smile", "smiley face"));
+	// console.log("partial: ", fuzzball.partial_ratio("smile", "smiley face"));
 
-	// POST text to api.js
-	// post('/api/emojifyInput', emojifyInput);
-	// post('/api/foo', {}, function() {
-	// 	//???
-	// })
+	// for each word, find if word in keywords for emoji???
+	// for each word, calculate ratio(word, keyword in keywords). return emoji with highest avg ratio???
 
-	// TODO: use fuzz to match post words to database keywords
+	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
+
+
+
 
 
 
@@ -67,6 +65,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 	// TODO: ELSE (APPEND=DEFAULT)
 
+	
 	// display text 
 
 	// TODO: get emoji once & save? Switch between 2 posts when user toggles button in real time
