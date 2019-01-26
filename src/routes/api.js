@@ -12,7 +12,21 @@ const Emoji = require('../models/emoji');
 
 const router = express.Router();
 
-// GET user input
+// for emojify
+const fuzz = require('fuzzball');
+
+// FIXME: may need to get database data here instead
+// GET user input from emojify.js
+// router.get('/emojifyInput', function(req, res) {
+//   // use fuzz on user data
+//   res.send(fuzz.ratio("fuzz", "fuzzy"));
+// })
+
+// router.get('/comment', function(req, res) {
+//   Comment.find({ parent: req.query.parent }, function(err, comments) {
+//     res.send(comments);
+//   })
+// });
 
 // api endpoints
 router.get('/whoami', function(req, res) {
