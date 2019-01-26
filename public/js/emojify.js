@@ -30,7 +30,7 @@ main();
 // TODO: access emoji data (Atlas)
 function renderEmojiDatabase(emojis) {
 	console.log("get emojis")
-	// console.log(emoji[0]);
+	console.log(emojis);
 	// return emojiDB;
 }
 
