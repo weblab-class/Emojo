@@ -31,8 +31,11 @@ router.get('/user', function(req, res) {
 
 router.get('/emoji', function(req, res) {
   console.log("router get emoji");
+  console.log(req);
+
   Emoji.find({}, function(err, emojis) {
     console.log("Emoji.find emoji");
+    console.log(res);
     res.send(emojis);
   });
 });
