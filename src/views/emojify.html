@@ -5,7 +5,14 @@
   <title>EM😮J😮</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.css" rel="stylesheet">
+
   <link rel="stylesheet" href="/static/css/style.css">
+  <!-- <link rel="stylesheet" href="C:/Users/Anthony Hernandez/Desktop/emojogithub/wangms-anthonyh4-Rpasetes/public/css/style.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@4/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js@4/public/assets/scripts/choices.min.js"></script>
+
+
+
 </head>
 
 
@@ -36,7 +43,9 @@
   <div class="row">
     <div class="col-sm-6">
       <div class="form-group">
-                <textarea id="emojify-input" class="form-control" rows="25" cols="80" placeholder="Enter text here..."></textarea>
+          <textarea id="emojify-input" class="form-control" rows="17" cols="80" placeholder="Enter text here..."></textarea>
+          <h6 style="color: black;margin-top: 20px;margin-bottom: 20px; font-size: 20px;"> Enter tags🏷️ below to help others find🔍 your post📌!!! </h6>
+          <input class="form-control" id="choices-text-remove-button" type="text" value="Emojo" placeholder="Enter your tags...">
       </div>
     </div>
     <div class="col-sm-6">
@@ -81,7 +90,18 @@
 <script charset="UTF-8" src="/static/css/fuzzball.umd.min.js"></script>
 <script src="/static/js/api.js"></script>
 <script src="/static/js/emojify.js"></script>
-
+<!-- <script src="../../public/js/api.js"></script>
+<script src="../../public/js/emojify.js"></script> -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var textRemove = new Choices(document.getElementById('choices-text-remove-button'), {
+        delimiter: ',',
+        editItems: true,
+        maxItemCount: 10,
+        removeItemButton: true,
+      });
+    });
+</script>
 
 </body>
 </html>
