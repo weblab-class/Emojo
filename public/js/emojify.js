@@ -5,6 +5,7 @@ function main() {
 	});
 
 	get('/api/emoji', {}, function(emojis) {
+		console.log("get /api/emoji");
 		renderEmojiDatabase(emojis);
 	  });
 }
@@ -28,7 +29,8 @@ main();
 
 // TODO: access emoji data (Atlas)
 function renderEmojiDatabase(emojis) {
-	console.log(emoji[0]);
+	console.log("get emojis")
+	// console.log(emoji[0]);
 	// return emojiDB;
 }
 

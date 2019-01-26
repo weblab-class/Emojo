@@ -4,7 +4,7 @@ const connect = require('connect-ensure-login');
 
 // models
 const User = require('../models/user');
-const Emoji = require('../models/emoji')
+const Emoji = require('../models/emoji');
 
 // const Story = require('../models/story');
 // const Comment = require('../models/comment');
@@ -30,7 +30,9 @@ router.get('/user', function(req, res) {
 });
 
 router.get('/emoji', function(req, res) {
+  console.log("router get emoji");
   Emoji.find({}, function(err, emojis) {
+    console.log("Emoji.find emoji");
     res.send(emojis);
   });
 });
