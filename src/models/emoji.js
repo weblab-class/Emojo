@@ -10,7 +10,7 @@ const EmojiModelSchema = new mongoose.Schema ({
     keywords    : Array,
     shortCode   : String,
     tags        : Array,
-}, {collection: 'emoji'});
+}, {collection: 'Emojo.emoji'});
 
 // compile model from schema
 module.exports = mongoose.model('EmojiModel', EmojiModelSchema);
