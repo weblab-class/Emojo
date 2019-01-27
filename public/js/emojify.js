@@ -54,12 +54,20 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// for each word, find if word in keywords for emoji???
 	// for each word, calculate ratio(word, keyword in keywords). return emoji with highest avg ratio???
 
+	// split string into array of words & punctuations
+	emojifyInput = emojifyInput.trim(); // remove whitespace on both sides
+	emojifyInputArray = tokenize(emojifyInput); // FIXME and punctuations
+	console.log("input: ", emojifyInput);
+	console.log("array: ", emojifyInputArray);
+
+
+
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
-	// TODO: IF REPLACE 
+	// IF REPLACE 
 	if (!toggleState) {
 
 	}
-	// TODO: ELSE (APPEND=DEFAULT)
+	// IF ADD
 	else {
 
 	}
@@ -79,3 +87,59 @@ function post(emojifiedPost) {
 		// add ID to user.posts
 		// post: content, author, timestamp, tags
 }
+
+
+	// tokenize(str)
+// extracts semantically useful tokens from a string containing English-language sentences
+// @param {String}    the string to tokenize
+// @returns {Array}   contains extracted tokens
+
+
+// source: https://gist.github.com/raisch/1018823
+function tokenize(str) {
+
+	var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript does not
+			  '\\%'+ '\\&'+ '\\\''+ '\\('+ '\\)'+             // support POSIX character
+			  '\\*'+ '\\+'+ '\\,'+ '\\\\'+ '\\-'+             // classes, we'll need our
+			  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
+			  '\\='+ '\\>'+ '\\?'+ '\\@'+ '\\['+
+			  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
+			  '\\|'+ '\\}'+ '\\~'+ '\\]',
+ 
+		re=new RegExp(                                        // tokenizer
+		   '\\s*'+            // discard possible leading whitespace
+		   '('+               // start capture group #1
+			 '\\.{3}'+            // ellipsis (must appear before punct)
+		   '|'+               // alternator
+			 '\\w+\\-\\w+'+       // hyphenated words (must appear before punct)
+		   '|'+               // alternator
+			 '\\w+\'(?:\\w+)?'+   // compound words (must appear before punct)
+		   '|'+               // alternator
+			 '\\w+'+              // other words
+		   '|'+               // alternator
+			 '['+punct+']'+        // punct
+		   ')'                // end capture group
+		 );
+ 
+	// grep(ary[,filt]) - filters an array
+	//   note: could use jQuery.grep() instead
+	// @param {Array}    ary    array of members to filter
+	// @param {Function} filt   function to test truthiness of member,
+	//   if omitted, "function(member){ if(member) return member; }" is assumed
+	// @returns {Array}  all members of ary where result of filter is truthy
+ 
+	function grep(ary,filt) {
+	  var result=[];
+	  for(var i=0,len=ary.length;i++<len;) {
+		var member=ary[i]||'';
+		if(filt && (typeof filt === 'Function') ? filt(member) : member) {
+		  result.push(member);
+		}
+	  }
+	  return result;
+	}
+ 
+	return grep( str.split(re) );   // note: filter function omitted 
+									//       since all we need to test 
+									//       for is truthiness
+ } // end tokenize()
