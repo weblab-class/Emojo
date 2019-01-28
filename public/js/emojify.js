@@ -86,21 +86,30 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 		console.log("elt: ", elt);		
 
 		if (!punct.includes(elt)) { // elt is word
+
+			let emojiFound = false;
+
 			for (let j = 0, lenEmoji = window.emojis.length; j < lenEmoji; j++) {
 				let emojiDoc = window.emojis[j];
-				console.log("emojiDoc: ", emojiDoc);
+				// console.log("emojiDoc: ", emojiDoc);
 				for (let k = 0, lenKey = emojiDoc['keywords'].length; k < lenKey; k++) {
 					let keyword = emojiDoc['keywords'][k];
-					console.log("keyword: ", keyword);
+					// console.log("keyword: ", keyword);
 					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
-					console.log("partial ratio: ", partial_ratio);
 					// TODO generate array of all emoji who fit criteria for word
 					if (match_partial_ratio > 95) {
+						console.log("partial ratio: ", match_partial_ratio);
+
 						console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
 						// replaceArray.push(emojiDoc['character']);
-						// break; // use the 1st emoji that matches word
+						emojiFound = true;
+						break; // use the 1st emoji that matches word
 					}
+				}
+
+				if (emojiFound) {
+					break;
 				}
 
 			}
