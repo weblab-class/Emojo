@@ -1,3 +1,4 @@
+import { watchFile } from "fs";
 
 // Code for Updating login/logout button //
 
@@ -29,15 +30,23 @@ main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
-window.globalEmoji;
+window.emojis;
 function renderEmojiDB(emojis) {
-	window.globalEmoji = emojis;
-	console.log("something");
+	window.emojis = emojis;
+	// console.log("something");
 
 }
 
+var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript does not
+		  '\\%'+ '\\&'+ '\\\''+ '\\('+ '\\)'+             // support POSIX character
+		  '\\*'+ '\\+'+ '\\,'+ '\\\\'+ '\\-'+             // classes, we'll need our
+		  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
+		  '\\='+ '\\>'+ '\\?'+ '\\@'+ '\\['+
+		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
+		  '\\|'+ '\\}'+ '\\~'+ '\\]',
 
 
+// FIXME make sure user gives page 2s to get emojiDB before clicking emojifyMyText
 
 
 // trigger on button click
@@ -49,7 +58,6 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	console.log("user input: ", emojifyInput);	
 	
 
-	console.log(window.globalEmoji);
 
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
@@ -67,19 +75,41 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	console.log("input: ", emojifyInput);
 	console.log("array: ", emojifyInputArray);
 
+	console.log(window.emojis);
 
+	addArray	 = [];
+	replaceArray = [];
+
+	for (elt in emojifyInputArray) {
+		// elt is word or punctuation
+		addArray.push(elt);
+
+		if (!punct.includes(elt)) { // elt is word
+			for (let emojiDoc in window.emojis) {
+				for (let keyword in emojiDOc['keywords']) {
+					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
+					// TODO generate array of all emoji who fit criteria for word
+					if (match_partial_ratio > 95) {
+						addArray.push(emojiDoc['character']);
+						break; // use the 1st emoji that matches word
+					}
+				}
+
+			}
+		}
+	}
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
 	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time)
 	// IF REPLACE 
 	if (!toggleState) {
-		// FIXME
+		// FIXME: concat(ReplaceArray)
 		emojifyInputTextbox.value = "replace";
 	}
 	// IF ADD
 	else {
 		// FIXME
-		emojifyInputTextbox.value = "add";
+		emojifyInputTextbox.value = addArray;
 	}	
 }
 
@@ -89,7 +119,10 @@ function post(emojifiedPost) {
 	// id="postBtn"
 	// store post (copy from catbook)
 		// add post to db
+		// get timestamp
+		// parse tags into array
 }
+
 
 
 	// tokenize(str)
@@ -101,13 +134,13 @@ function post(emojifiedPost) {
 // source: https://gist.github.com/raisch/1018823
 function tokenize(str) {
 
-	var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript does not
-			  '\\%'+ '\\&'+ '\\\''+ '\\('+ '\\)'+             // support POSIX character
-			  '\\*'+ '\\+'+ '\\,'+ '\\\\'+ '\\-'+             // classes, we'll need our
-			  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
-			  '\\='+ '\\>'+ '\\?'+ '\\@'+ '\\['+
-			  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
-			  '\\|'+ '\\}'+ '\\~'+ '\\]',
+	// var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript does not
+	// 		  '\\%'+ '\\&'+ '\\\''+ '\\('+ '\\)'+             // support POSIX character
+	// 		  '\\*'+ '\\+'+ '\\,'+ '\\\\'+ '\\-'+             // classes, we'll need our
+	// 		  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
+	// 		  '\\='+ '\\>'+ '\\?'+ '\\@'+ '\\['+
+	// 		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
+	// 		  '\\|'+ '\\}'+ '\\~'+ '\\]',
  
 		re=new RegExp(                                        // tokenizer
 		   '\\s*'+            // discard possible leading whitespace
