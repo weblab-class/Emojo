@@ -30,8 +30,9 @@ main();
 // FIXME
 //  access emoji data (Atlas)
 function renderEmojiDatabase(emojis) {
+	// emojis is array of dictionaries 
 	// console.log("get emojis")
-	console.log(emojis);
+	console.log(typeof emojis); 
 	// return emojiDB;
 }
 
