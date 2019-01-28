@@ -49,7 +49,7 @@ function placePosts() {
 	while (storiesDiv.lastChild.id !== 'first-element') {
     	storiesDiv.removeChild(storiesDiv.lastChild);
 	}
-	let searchTopic = document.getElementById("txtSearch").value;
+	let searchTopic = document.getElementById("emojify-input").value;
 	console.log(searchTopic);
 	console.log("calling stories SEARCHfunction");
 	get('/api/stories', {}, function(storiesArr) {
