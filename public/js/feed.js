@@ -11,6 +11,7 @@ function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
 	});
+	console.log("calling posts function");
 	placePosts();
 }
 
@@ -54,6 +55,7 @@ function storyDOMObject(storyJSON) {
 function placePosts() {
 	//get posts from Mongo DB
 	const storiesDiv = document.getElementById('post-table');
+	console.log("calling stories function");
 	get('/api/stories', {}, function(storiesArr) {
 		console.log("getting stories");
     for (let i = 0; i < storiesArr.length; i++) {
