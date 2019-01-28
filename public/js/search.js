@@ -46,8 +46,8 @@ function storyDOMObject(storyJSON) {
 function placePosts() {
 	//get posts from Mongo DB
 	const storiesDiv = document.getElementById('post-table');
-	while (storiesDiv.childNodes.length > 1) {
-       storiesDiv.removeChild(storiesDiv.lastChild);
+	while (storiesDiv.lastChild.id !== 'first-element') {
+    	storiesDiv.removeChild(storiesDiv.lastChild);
 	}
 	let searchTopic = document.getElementById('txtSearch').value;
 	console.log(searchTopic);
