@@ -4,7 +4,9 @@ const mongoose = require('mongoose');
 // const mongoURL = 'mongodb+srv://user:user@cluster0-pmuyj.mongodb.net/test?retryWrites=true';
 const mongoURL = process.env.ATLAS_SRV;
 const options = {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  // custom code
+  dbName         : 'Emojo', 
 };
 mongoose.connect(mongoURL, options);
 mongoose.Promise = global.Promise;

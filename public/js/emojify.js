@@ -1,4 +1,6 @@
 // Code for Updating login/logout button //
+var emojiDB;
+
 function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
@@ -6,9 +8,11 @@ function main() {
 
 	get('/api/emoji', {}, function(emojis) {
 		// console.log("get /api/emoji");
-		renderEmojiDatabase(emojis);
+		emojiDB = emojis;
+		// renderEmojiDatabase(emojis);
 	  });
 }
+
 
 function updateButton(user) {
 	if (user._id !== undefined) {
@@ -24,16 +28,16 @@ function updateButton(user) {
 }
 
 main();
+console.log(emojiDB);
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
-// FIXME
-//  access emoji data (Atlas)
-function renderEmojiDatabase(emojis) {
-	// console.log("get emojis")
-	// console.log(emojis);
-	// return emojiDB;
-}
+// // FIXME
+// //  access emoji data (Atlas)
+// function renderEmojiDatabase(emojis) {
+// 	// emojis is array of dictionaries 
+// 	return emojis;
+// }
 
 
 
@@ -64,6 +68,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
+	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time)
 	// IF REPLACE 
 	if (!toggleState) {
 		// FIXME
@@ -73,22 +78,15 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	else {
 		// FIXME
 		emojifyInputTextbox.value = "add";
-	}
-	
-	// display text 
-
-	// TODO: get emoji once & save? Switch between 2 posts when user toggles button in real time
+	}	
 }
 
 
 function post(emojifiedPost) {
-	//TODO: Post to feed. worry about data structure later
+	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
-		// assign ID to post
 		// add post to db
-		// add ID to user.posts
-		// post: content, author, timestamp, tags
 }
 
 
