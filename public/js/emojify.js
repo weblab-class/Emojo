@@ -95,10 +95,11 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 				for (let k = 0, lenKey = emojiDoc['keywords'].length; k < lenKey; k++) {
 					let keyword = emojiDoc['keywords'][k];
 					// console.log("keyword: ", keyword);
-					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
+					// match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
+					match_ratio = fuzzball.ratio(elt, keyword);
 					// TODO generate array of all emoji who fit criteria for word
-					if (match_partial_ratio > 95) {
-						console.log("partial ratio: ", match_partial_ratio);
+					if (match_ratio > 95) {
+						console.log(" ratio: ", match_ratio);
 
 						console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
