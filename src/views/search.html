@@ -18,7 +18,7 @@
   <div class="collapse navbar-collapse order-0 order-md-0" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link" href="index.html">HOME🏡</a>
-      <a class="nav-item nav-link" href="search.html">SEARCH🔍</a>
+      <a class="nav-item nav-link" href="feed.html">FEED😋</a>
       <a class="nav-item nav-link" href="emojify.html">EM😮JIFY</a>
     </div>
     <div class="navbar-nav ml-auto">
@@ -30,11 +30,19 @@
 <div id="feed-page" class="container">
   <div id="post-table" class="container">
     <div class="row-lg" style="justify-content: center; align-content: center;">
-        <h4 style="padding-top: 50px; text-align: center; padding-bottom: 30px;">FEED😋</h4>
-        <h5 style="text-align: center;"> See all the beautiful✨ works of art🎨 our community🤲🥂 has created💯 below👇!!!</h5>
+        <h4 style="padding-top: 50px; text-align: center; padding-bottom: 30px;">SEARCH🔍</h4>
+        <h5 style="text-align: center; margin-bottom: 30px;"> You can search🔍 for fantabulous🌈 posts📌 below👇, we will find posts by tag🏷️, content📝, or emoji💁!!!</h5>
+      <div class="input-group" style="margin-bottom: 30px;">
+        <input type="text" class="form-control" placeholder="Search🕵️..." id="txtSearch"/>
+        <div class="input-group-btn">
+          <button class="btn btn-primary" type="submit">
+            🔍
+          </button>
+        </div>
+      </div>
     </div>
     <!-- What follows are all the posts in our feed in the block comment is a template (add objects to div with id "post-table") -->
-    <!--  <div class="row-lg">
+     <!-- <div class="row-lg">
       <div id="post" class="container">
         <h6> <i id="username"> User_object </i> &nbsp "timestamp_object" </h6>
         <h5> This is the post content with many emojis... its pretty litty 🔥🔥🔥🔥🔥🔥 </h5>
@@ -51,7 +59,7 @@
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.js"></script>
 <!-- script for string matching -->
 <script src="/static/js/api.js"></script>
-<script src="/static/js/feed.js"></script>
+<script src="/static/js/search.js"></script>
 
 </body>
 </html>
