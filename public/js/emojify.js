@@ -82,18 +82,21 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	for (elt in emojifyInputArray) {
 		// elt is word or punctuation
 		addArray.push(elt);
-		console.log("addarray: ", addArray);
-		
+		console.log("elt: ", elt);		
 
 		if (!punct.includes(elt)) { // elt is word
 			for (let emojiDoc in window.emojis) {
+				console.log("emojiDoc: ", emojiDoc);
 				for (let keyword in emojiDoc['keywords']) {
+					console.log("keyword: ", keyword);
 					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
+					console.log("partial ratio: ", partial_ratio);
 					// TODO generate array of all emoji who fit criteria for word
 					if (match_partial_ratio > 95) {
+						console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
-						replaceArray.push(emojiDoc['character']);
-						break; // use the 1st emoji that matches word
+						// replaceArray.push(emojiDoc['character']);
+						// break; // use the 1st emoji that matches word
 					}
 				}
 
