@@ -82,6 +82,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	for (elt in emojifyInputArray) {
 		// elt is word or punctuation
 		addArray.push(elt);
+		console.log("addarray: ", addArray);
+		
 
 		if (!punct.includes(elt)) { // elt is word
 			for (let emojiDoc in window.emojis) {
@@ -90,11 +92,13 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 					// TODO generate array of all emoji who fit criteria for word
 					if (match_partial_ratio > 95) {
 						addArray.push(emojiDoc['character']);
+						replaceArray.push(emojiDoc['character']);
 						break; // use the 1st emoji that matches word
 					}
 				}
 
 			}
+
 		}
 	}
 
