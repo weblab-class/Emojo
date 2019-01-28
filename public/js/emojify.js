@@ -1,5 +1,4 @@
 // Code for Updating login/logout button //
-// var emojiDB;
 
 function main() {
 	get('/api/whoami', {}, function(user) {
@@ -7,7 +6,7 @@ function main() {
 	});
 
 	get('/api/emoji', {}, function(emojis) {
-		window.emojiDB = emojis;
+		renderEmojiDB(emojis);
 	  });
 }
 
@@ -26,17 +25,14 @@ function updateButton(user) {
 }
 
 main();
-console.log(window.emojiDB);
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
-// // FIXME
-// //  access emoji data (Atlas)
-// function renderEmojiDatabase(emojis) {
-// 	console.log("emojis: ", emojis);
-// 	// emojis is array of dictionaries 
-// 	return emojis;
-// }
+var globalEmoji;
+function renderEmojiDB(emojis) {
+	globalEmoji = emojis;
+}
+console.log(globalEmoji);
 
 
 
