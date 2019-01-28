@@ -14,13 +14,13 @@ function updateButton(user) {
 	if (user._id !== undefined) {
 		document.getElementById('log').innerText="LOGOUT😘";
 		document.getElementById('log').href="/logout";
-		document.getElementById('postBtn').class="btn btn-primary btn-lg btn-block";
+		document.getElementById('postBtn').className="btn btn-primary btn-lg btn-block";
 		document.getElementById('postBtn').innerText="POST📌";
 	}
 	else {
 		document.getElementById('log').innerText="LOGIN📂";
 		document.getElementById('log').href="./auth/google";
-		document.getElementById('postBtn').class="btn btn-primary btn-lg btn-block disabled";
+		document.getElementById('postBtn').className="btn btn-primary btn-lg btn-block disabled";
 		document.getElementById('postBtn').innerText="POST📌 (LOG IN FIRST)";
 	}
 }
