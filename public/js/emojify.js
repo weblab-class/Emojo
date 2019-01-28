@@ -74,27 +74,42 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	console.log("input: ", emojifyInput);
 	console.log("array: ", emojifyInputArray);
 
-	console.log(window.emojis);
+	// console.log(window.emojis);
 
 	addArray	 = [];
 	replaceArray = [];
 
-	for (elt in emojifyInputArray) {
+	for (let i = 0, len = emojifyInputArray.length; i < len; i++) {
+		let elt = emojifyInputArray[i];
 		// elt is word or punctuation
 		addArray.push(elt);
-		console.log("addarray: ", addArray);
-		
+		console.log("elt: ", elt);		
 
 		if (!punct.includes(elt)) { // elt is word
-			for (let emojiDoc in window.emojis) {
-				for (let keyword in emojiDoc['keywords']) {
+
+			let emojiFound = false;
+
+			for (let j = 0, lenEmoji = window.emojis.length; j < lenEmoji; j++) {
+				let emojiDoc = window.emojis[j];
+				// console.log("emojiDoc: ", emojiDoc);
+				for (let k = 0, lenKey = emojiDoc['keywords'].length; k < lenKey; k++) {
+					let keyword = emojiDoc['keywords'][k];
+					// console.log("keyword: ", keyword);
 					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
 					// TODO generate array of all emoji who fit criteria for word
 					if (match_partial_ratio > 95) {
+						console.log("partial ratio: ", match_partial_ratio);
+
+						console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
-						replaceArray.push(emojiDoc['character']);
+						// replaceArray.push(emojiDoc['character']);
+						emojiFound = true;
 						break; // use the 1st emoji that matches word
 					}
+				}
+
+				if (emojiFound) {
+					break;
 				}
 
 			}
