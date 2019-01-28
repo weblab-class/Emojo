@@ -1,5 +1,5 @@
+
 // Code for Updating login/logout button //
-var emojiDB;
 
 function main() {
 	get('/api/whoami', {}, function(user) {
@@ -7,10 +7,7 @@ function main() {
 	});
 
 	get('/api/emoji', {}, function(emojis) {
-		// console.log("get /api/emoji");
-		// emojiDB = emojis;
-		emojiDB = renderEmojiDatabase(emojis);
-		console.log("emojiDB: ", emojiDB);
+		renderEmojiDB(emojis);
 	  });
 }
 
@@ -29,17 +26,16 @@ function updateButton(user) {
 }
 
 main();
-console.log("global: ", emojiDB);
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
-// // FIXME
-// //  access emoji data (Atlas)
-function renderEmojiDatabase(emojis) {
-	console.log("emojis: ", emojis);
-	// emojis is array of dictionaries 
-	return emojis;
+window.globalEmoji;
+function renderEmojiDB(emojis) {
+	window.globalEmoji = emojis;
+	console.log("something");
+
 }
+
 
 
 
@@ -52,6 +48,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	let emojifyInput = emojifyInputTextbox.value;
 	console.log("user input: ", emojifyInput);	
 	
+
+	console.log(window.globalEmoji);
+
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
@@ -63,7 +62,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 	// split string into array of words & punctuations
 	emojifyInput = emojifyInput.trim(); // remove whitespace on both sides
-	emojifyInputArray = tokenize(emojifyInput); // FIXME and punctuations
+	emojifyInputArray = tokenize(emojifyInput); // FIXME skip punctuations when searching
+	
 	console.log("input: ", emojifyInput);
 	console.log("array: ", emojifyInputArray);
 
