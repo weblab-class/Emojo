@@ -117,11 +117,9 @@ function postStory() {
 	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
-<<<<<<< HEAD
 		// add post to db
 		// get timestamp
 		// parse tags into array
-=======
 	let postContent = document.getElementById("emojify-input").value;
 	let tags = document.getElementById('choices-text-remove-button').value;
 	let tagsArray = tags.split(',');
@@ -141,7 +139,6 @@ function postStory() {
 	else {
 		alert("You must be logged in to post!");
 	}
->>>>>>> 5583a7ac14cba832be6fb15f89d7770903fc10d1
 }
 
 
