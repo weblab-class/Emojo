@@ -54,7 +54,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// get user plaintext
 	let emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
-	console.log("user input: ", emojifyInput);	
+	console.log("user input: ", emojifyInput);
 	
 
 
@@ -109,7 +109,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	else {
 		// FIXME
 		emojifyInputTextbox.value = addArray;
-	}	
+	}
 }
 
 
