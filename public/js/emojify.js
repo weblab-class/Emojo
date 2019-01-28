@@ -85,7 +85,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 		if (!punct.includes(elt)) { // elt is word
 			for (let emojiDoc in window.emojis) {
-				for (let keyword in emojiDOc['keywords']) {
+				for (let keyword in emojiDoc['keywords']) {
 					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
 					// TODO generate array of all emoji who fit criteria for word
 					if (match_partial_ratio > 95) {
