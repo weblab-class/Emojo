@@ -1,9 +1,10 @@
-
+window.user;
 // Code for Updating login/logout button //
 
 function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
+		window.user = user;
 	});
 
 	get('/api/emoji', {}, function(emojis) {
@@ -99,7 +100,7 @@ function post() {
 		timestamp: currentTimeString,
 		tags: tagsArray
 	};
-	if (user._id !== undefined) {
+	if (window.user._id !== undefined) {
 		post('/api/story', data);
 		document.getElementById("emojify-input").value="";
 		document.getElementById('choices-text-remove-button').value="";
