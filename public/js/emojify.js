@@ -84,10 +84,24 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 }
 
 
-function post(emojifiedPost) {
+function post() {
 	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
+	let content = document.getElementById("emojify-input").innerText;
+
+	let tags = document.getElementById('choices-text-remove-button').innerText;
+
+
+	//TODO FIX TIME ZONES 
+	let currentTime = new Date();
+	let currentTimeString = currentTime.toLocaleString();
+
+	console.log(content);
+	console.log(tags);
+	console.log(currentTimeString);
+
+
 		// add post to db
 }
 
