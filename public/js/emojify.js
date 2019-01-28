@@ -42,7 +42,7 @@ var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript do
 		  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
 		  '\\='+ '\\>'+ '\\?'+ '\\@'+ '\\['+
 		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
-		  '\\|'+ '\\}'+ '\\~'+ '\\]',
+		  '\\|'+ '\\}'+ '\\~'+ '\\]';
 
 
 // FIXME make sure user gives page 2s to get emojiDB before clicking emojifyMyText
