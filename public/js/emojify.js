@@ -134,7 +134,9 @@ function postStory() {
 	if (window.user._id !== undefined) {
 		post('/api/story', data);
 		document.getElementById("emojify-input").value="";
-		document.getElementById('choices-text-remove-button').value="";
+		//TODO Does not work properly with the tags input object
+		//document.getElementById('choices-text-remove-button').value="";
+		alert("You posted Successfully🔥🔥🔥, see your new post🔥🔥🔥 in the FEED or SEARCH page🔥🔥🔥!!!")
 	}
 	else {
 		alert("You must be logged in to post!");
