@@ -54,13 +54,13 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// get user plaintext
 	let emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
-	console.log("user input: ", emojifyInput);
+	// console.log("user input: ", emojifyInput);
 	
 
 
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
-	console.log("button checked: ", toggleState);
+	// console.log("button checked: ", toggleState);
 
 	// console.log("partial: ", fuzzball.partial_ratio("smile", "smiley face"));
 
@@ -71,8 +71,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	emojifyInput = emojifyInput.trim(); // remove whitespace on both sides
 	emojifyInputArray = tokenize(emojifyInput); // FIXME skip punctuations when searching
 	
-	console.log("input: ", emojifyInput);
-	console.log("array: ", emojifyInputArray);
+	// console.log("input: ", emojifyInput);
+	// console.log("array: ", emojifyInputArray);
 
 	// console.log(window.emojis);
 
@@ -83,7 +83,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 		let elt = emojifyInputArray[i];
 		// elt is word or punctuation
 		addArray.push(elt);
-		console.log("elt: ", elt);		
+		// console.log("elt: ", elt);		
 
 		if (!punct.includes(elt)) { // elt is word
 
@@ -98,10 +98,10 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 					// match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
 					match_ratio = fuzzball.ratio(elt, keyword);
 					// TODO generate array of all emoji who fit criteria for word
-					if (match_ratio > 95) {
-						console.log(" ratio: ", match_ratio);
+					if (match_ratio > 90) { // FIXME choose emoji with highest score
+						// console.log(" ratio: ", match_ratio);
 
-						console.log("add character", emojiDoc['character']);
+						// console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
 						// replaceArray.push(emojiDoc['character']);
 						emojiFound = true;
@@ -128,7 +128,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// IF ADD
 	else {
 		// FIXME
+		console.log("array to string");
 		emojifyInputTextbox.value = addArray.join();
+		
 	}
 }
 
