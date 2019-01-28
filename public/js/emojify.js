@@ -88,9 +88,9 @@ function post() {
 	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
-	let content = document.getElementById("emojify-input").innerText;
+	let content = document.getElementById("emojify-input").value;
 
-	let tags = document.getElementById('choices-text-remove-button').innerText;
+	let tags = document.getElementById('choices-text-remove-button').value;
 
 
 	//TODO FIX TIME ZONES 
