@@ -1,4 +1,3 @@
-import { watchFile } from "fs";
 
 // Code for Updating login/logout button //
 
@@ -33,6 +32,7 @@ main();
 window.globalEmoji;
 function renderEmojiDB(emojis) {
 	window.globalEmoji = emojis;
+	console.log("something");
 
 }
 
@@ -50,7 +50,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	
 
 	console.log(window.globalEmoji);
-	
+
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
