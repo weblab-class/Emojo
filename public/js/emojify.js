@@ -8,8 +8,9 @@ function main() {
 
 	get('/api/emoji', {}, function(emojis) {
 		// console.log("get /api/emoji");
-		emojiDB = emojis;
-		// renderEmojiDatabase(emojis);
+		// emojiDB = emojis;
+		emojiDB = renderEmojiDatabase(emojis);
+		console.log("emojiDB: ", emojiDB);
 	  });
 }
 
@@ -28,16 +29,17 @@ function updateButton(user) {
 }
 
 main();
-console.log(emojiDB);
+console.log("global: ", emojiDB);
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
 // // FIXME
 // //  access emoji data (Atlas)
-// function renderEmojiDatabase(emojis) {
-// 	// emojis is array of dictionaries 
-// 	return emojis;
-// }
+function renderEmojiDatabase(emojis) {
+	console.log("emojis: ", emojis);
+	// emojis is array of dictionaries 
+	return emojis;
+}
 
 
 
