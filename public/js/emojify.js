@@ -105,13 +105,13 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 						addArray.push(emojiDoc['character']);
 						// replaceArray.push(emojiDoc['character']);
 						emojiFound = true;
-						break; // use the 1st emoji that matches word
+						// break; // use the 1st emoji that matches word
 					}
 				}
 
-				if (emojiFound) {
-					break;
-				}
+				// if (emojiFound) {
+				// 	break;
+				// }
 
 			}
 
