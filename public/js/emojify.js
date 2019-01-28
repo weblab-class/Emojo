@@ -1,10 +1,9 @@
-import { watchFile } from "fs";
-
 // Code for Updating login/logout button //
 
 function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
+		window.user = user;
 	});
 
 	get('/api/emoji', {}, function(emojis) {
@@ -114,13 +113,35 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 }
 
 
-function post(emojifiedPost) {
+function post() {
 	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
+<<<<<<< HEAD
 		// add post to db
 		// get timestamp
 		// parse tags into array
+=======
+	let postContent = document.getElementById("emojify-input").value;
+	let tags = document.getElementById('choices-text-remove-button').value;
+	let tagsArray = tags.split(',');
+	//TODO FIX TIME ZONES 
+	let currentTime = new Date();
+	let currentTimeString = currentTime.toLocaleString();
+	data = {
+		content: postContent,
+		timestamp: currentTimeString,
+		tags: tagsArray
+	};
+	if (window.user._id !== undefined) {
+		post('/api/story', data);
+		document.getElementById("emojify-input").value="";
+		document.getElementById('choices-text-remove-button').value="";
+	}
+	else {
+		alert("You must be logged in to post!");
+	}
+>>>>>>> 5583a7ac14cba832be6fb15f89d7770903fc10d1
 }
 
 
