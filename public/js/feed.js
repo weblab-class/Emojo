@@ -35,7 +35,8 @@ function storyDOMObject(storyJSON) {
   cardContent.className="container";
 
   const cardHeader = document.createElement('h6');
-  cardHeader.innerHTML= &nbsp storyJSON.timestamp;
+  cardHeader.innerHTML+= "&nbsp;";
+  cardHeader.innerHTML+= storyJSON.timestamp;
 
   const cardUsername = document.createElement('i');
   cardUsername.id="username";
