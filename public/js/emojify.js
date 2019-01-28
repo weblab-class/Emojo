@@ -42,7 +42,8 @@ function renderEmojiDatabase(emojis) {
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 	// get user plaintext
-	let emojifyInput = document.getElementById("emojify-input").value;
+	let emojifyInputTextbox = document.getElementById("emojify-input");
+	let emojifyInput = emojifyInputTextbox.value;
 	console.log("user input: ", emojifyInput);	
 	
 	// get toggle state: false = replace; true = add
@@ -65,11 +66,13 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
 	// IF REPLACE 
 	if (!toggleState) {
-
+		// FIXME
+		emojifyInputTextbox.value = "replace";
 	}
 	// IF ADD
 	else {
-
+		// FIXME
+		emojifyInputTextbox.value = "add";
 	}
 	
 	// display text 
