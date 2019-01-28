@@ -85,7 +85,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 }
 
 
-function post() {
+function postStory() {
 	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
