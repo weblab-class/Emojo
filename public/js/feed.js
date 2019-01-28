@@ -66,7 +66,6 @@ function placePosts() {
     }
    });
 	//Create div elements like the template
-
 	//add them as children in the container with ID "post-table"
 }
 
