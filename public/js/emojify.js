@@ -1,3 +1,5 @@
+import { watchFile } from "fs";
+
 // Code for Updating login/logout button //
 
 function main() {
@@ -28,11 +30,12 @@ main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //
 
-var globalEmoji;
+window.globalEmoji;
 function renderEmojiDB(emojis) {
-	globalEmoji = emojis;
+	window.globalEmoji = emojis;
+
 }
-console.log(globalEmoji);
+
 
 
 
@@ -45,6 +48,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	let emojifyInput = emojifyInputTextbox.value;
 	console.log("user input: ", emojifyInput);	
 	
+
+	console.log(window.globalEmoji);
+	
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	console.log("button checked: ", toggleState);
@@ -56,7 +62,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 	// split string into array of words & punctuations
 	emojifyInput = emojifyInput.trim(); // remove whitespace on both sides
-	emojifyInputArray = tokenize(emojifyInput); // FIXME and punctuations
+	emojifyInputArray = tokenize(emojifyInput); // FIXME skip punctuations when searching
+	
 	console.log("input: ", emojifyInput);
 	console.log("array: ", emojifyInputArray);
 
