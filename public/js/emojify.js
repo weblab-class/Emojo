@@ -88,21 +88,25 @@ function post() {
 	//TODO: Post to feed. 
 	// id="postBtn"
 	// store post (copy from catbook)
-	let content = document.getElementById("emojify-input").value;
-
+	let postContent = document.getElementById("emojify-input").value;
 	let tags = document.getElementById('choices-text-remove-button').value;
-
-
+	let tagsArray = tags.split(',');
 	//TODO FIX TIME ZONES 
 	let currentTime = new Date();
 	let currentTimeString = currentTime.toLocaleString();
-
-	console.log(content);
-	console.log(tags);
-	console.log(currentTimeString);
-
-
-		// add post to db
+	data = {
+		content: postContent,
+		timestamp: currentTimeString,
+		tags: tagsArray
+	};
+	if (user._id !== undefined) {
+		post('/api/story', data);
+		document.getElementById("emojify-input").value="";
+		document.getElementById('choices-text-remove-button').value="";
+	}
+	else {
+		alert("You must be logged in to post!");
+	}
 }
 
 
