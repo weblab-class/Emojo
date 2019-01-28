@@ -21,8 +21,6 @@ function updateButton(user) {
 	}
 }
 
-
-
 main();
 
 // CODE FOR IMPLEMENTING EMOJIFIER //

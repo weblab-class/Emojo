@@ -223,6 +223,8 @@ p {
 	font-size: 23px;
 }
 
+/*Stuff for Search Bar*/
+
 /*Stuff for tag input*/
 .choices__list--multiple .choices__item {
   background-color: var(--main-mid) !important; 
