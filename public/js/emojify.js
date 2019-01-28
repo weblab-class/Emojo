@@ -74,20 +74,23 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	console.log("input: ", emojifyInput);
 	console.log("array: ", emojifyInputArray);
 
-	console.log(window.emojis);
+	// console.log(window.emojis);
 
 	addArray	 = [];
 	replaceArray = [];
 
-	for (elt in emojifyInputArray) {
+	for (let i = 0, len = emojifyInputArray.length; i < len; i++) {
+		let elt = emojifyInputArray[i];
 		// elt is word or punctuation
 		addArray.push(elt);
 		console.log("elt: ", elt);		
 
 		if (!punct.includes(elt)) { // elt is word
-			for (let emojiDoc in window.emojis) {
+			for (let j = 0, lenEmoji = window.emojis.length; j < lenEmoji; j++) {
+				let emojiDoc = window.emojis[j];
 				console.log("emojiDoc: ", emojiDoc);
-				for (let keyword in emojiDoc['keywords']) {
+				for (let k = 0, lenKey = emojiDoc['keywords'].length; k < lenKey; k++) {
+					let keyword = emojiDoc['keywords'][k];
 					console.log("keyword: ", keyword);
 					match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
 					console.log("partial ratio: ", partial_ratio);
