@@ -70,7 +70,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	console.log("loading");
 	emojifyInputTextbox.value = "Loading...";
 
-
+	return; 
+	
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	// console.log("button checked: ", toggleState);
