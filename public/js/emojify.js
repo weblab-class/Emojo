@@ -139,6 +139,9 @@ function postStory() {
 	let postContent = document.getElementById("emojify-input").value;
 	let tags = document.getElementById('choices-text-remove-button').value;
 	let tagsArray = tags.split(',');
+	// for (let i = 0; i<tagsArray.length; i++) {
+	// 	tagsArray[i]=tagsArray[i].toLowerCase();
+	// }
 	//TODO FIX TIME ZONES 
 	let currentTime = new Date();
 	let currentTimeString = currentTime.toLocaleString();
