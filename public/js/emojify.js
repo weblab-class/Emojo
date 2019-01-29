@@ -112,7 +112,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 						// console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
-						// replaceArray.push(emojiDoc['character']);
+					
+						replaceArray.push(emojiDoc['character']);
 						emojiFound = true;
 						break; // use the 1st emoji that matches word
 					}
@@ -123,6 +124,12 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 				}
 
 			}
+		// after going thru all emojis, if !emojiFound, display word
+		if (!emojiFound) {
+			replaceArray.push(elt)
+		}
+		} else { // elt is punctuation
+			replaceArray.push(elt);
 
 		}
 	}
@@ -132,13 +139,14 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// IF REPLACE 
 	if (!toggleState) {
 		// FIXME: concat(ReplaceArray)
-		emojifyInputTextbox.value = "replace";
+		emojifyInputTextbox.value = replaceArray.join(" ")/*.replace(/ +(\W)/g, "$1")*/;
 	}
 	// IF ADD
 	else {
 		// FIXME
-		console.log("array to string");
-		emojifyInputTextbox.value = addArray.join(" ").replace(/\s+(\W)/g, "$1");;
+		// console.log("array to string");
+		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
+		// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
 		
 	}
 }
