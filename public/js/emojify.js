@@ -57,7 +57,7 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 
 
 function emojifyMyText(callback) { // function name also used in emojify.html (change carefully)
-
+	$('#emojify-input').addClass('loadinggif');
 	
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
