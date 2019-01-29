@@ -42,11 +42,9 @@ main();
 window.emojis;
 function renderEmojiDB(emojis) {
 	window.emojis = emojis;
-	// console.log("something");
-
 }
 
-var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript does not
+const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript does not
 		  '\\%'+ '\\&'+ '\\\''+ '\\('+ '\\)'+             // support POSIX character
 		  '\\*'+ '\\+'+ '\\,'+ '\\\\'+ '\\-'+             // classes, we'll need our
 		  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
@@ -65,16 +63,10 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
-	// console.log("user input: ", emojifyInput);
 	
-	// loading(emojifyInputTextbox);
-
 
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
-	// console.log("button checked: ", toggleState);
-
-	// console.log("partial: ", fuzzball.partial_ratio("smile", "smiley face"));
 
 	// for each word, find if word in keywords for emoji???
 	// for each word, calculate ratio(word, keyword in keywords). return emoji with highest avg ratio???
@@ -83,23 +75,14 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	emojifyInput = emojifyInput.trim(); // remove whitespace on both sides
 	emojifyInputArray = tokenize(emojifyInput); // FIXME skip punctuations when searching
 	
-	// console.log("input: ", emojifyInput);
-	// console.log("array: ", emojifyInputArray);
-
-	// console.log(window.emojis);
-
 	addArray	 = [];
 	replaceArray = [];
 
 	for (let i = 0, len = emojifyInputArray.length; i < len; i++) {
 
-		console.log(i);
-		loading(emojifyInputTextbox);
-
 		let elt = emojifyInputArray[i];
 		// elt is word or punctuation
 		addArray.push(elt);
-		// console.log("elt: ", elt);		
 
 		if (!punct.includes(elt)) { // elt is word
 
@@ -134,27 +117,17 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	}
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
-	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time)
-	// IF REPLACE 
-	if (!toggleState) {
-		// FIXME: concat(ReplaceArray)
+	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time) 
+	// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
+
+	if (!toggleState) { // REPLACE
 		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
-	// IF ADD
-	else {
-		// FIXME
-		// console.log("array to string");
+	else { // ADD
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
-		// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
-		
 	}
 }
 
-function loading(textbox) {
-	console.log("emojify loading");
-	textbox.value = "Loading...";
-	return;
-}
 
 function postStory() {
 	//TODO: Post to feed. 
