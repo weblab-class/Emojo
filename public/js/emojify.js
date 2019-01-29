@@ -54,12 +54,12 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
 		  '\\|'+ '\\}'+ '\\~'+ '\\]' + '\\n';
 
-function start(callback) {
-	$('#emojify-input').addClass('loadinggif');
-	callback();
-}
+// function start(callback) {
+// 	$('#emojify-input').addClass('loadinggif');
+// 	callback();
+// }
 
-function emojifyMyText(callback) { // function name also used in emojify.html (change carefully)
+function emojifyMyText(/*callback*/) { // function name also used in emojify.html (change carefully)
 	
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
@@ -130,12 +130,12 @@ function emojifyMyText(callback) { // function name also used in emojify.html (c
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 
-	callback();
+	// callback();
 }
 
-function removeGif() {
-	$('#emojify-input').removeClass('loadinggif');
-}
+// function removeGif() {
+// 	$('#emojify-input').removeClass('loadinggif');
+// }
 
 function postStory() {
 	//TODO: Post to feed. 
