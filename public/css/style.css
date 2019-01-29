@@ -404,3 +404,6 @@ p {
     background-color: #f4abd23b;
 }
 
+.loadinggif {
+    background:url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/35771931234507.564a1d2403b3a.gif') no-repeat right center;
+}
