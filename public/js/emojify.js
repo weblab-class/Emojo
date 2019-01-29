@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         delimiter: ',',
         editItems: true,
         maxItemCount: 10,
+        duplicateItemsAllowed: false,
         removeItemButton: true,
       });
     });
@@ -171,7 +172,7 @@ function postStory() {
 		tags: tagsArray
 	};
 	if (window.user._id !== undefined) {
-		///post('/api/story', data);
+		post('/api/story', data);
 		document.getElementById("emojify-input").value="";
 		textRemove.removeActiveItems();
 		//TODO Does not work properly with the tags input object
