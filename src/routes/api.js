@@ -45,7 +45,9 @@ router.get('/user', function(req, res) {
 });
 
 router.get('/stories', function(req, res) {
+  console.log(req);
   Story.find({}, function(err, stories) {
+    console.log(res);  
     res.send(stories);
   });
 });
