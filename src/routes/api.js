@@ -52,8 +52,9 @@ router.get('/stories', function(req, res) {
 
 router.get('/search', function(req, res) {
   //console.log(req.query.topic);
-  Story.find({tags: "/"+req.query.topic+"/i"}, function(err, stories) {
-    console.log("found the correct stories pleaseeeee!");
+  let regex = "/"+req.query.topic+"/i";
+  Story.find({tags: new RegExp(regex)}, function(err, stories) {
+    console.log("found the correct stories please and thank you!");
     res.send(stories);
   });
 });
