@@ -130,7 +130,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// IF REPLACE 
 	if (!toggleState) {
 		// FIXME: concat(ReplaceArray)
-		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
+		emojifyInputTextbox.value = replaceArray.join(" ")/*.replace(/ +(\W)/g, "$1")*/;
 	}
 	// IF ADD
 	else {
