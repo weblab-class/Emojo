@@ -54,12 +54,9 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
 		  '\\|'+ '\\}'+ '\\~'+ '\\]' + '\\n';
 
-// function start(callback(callback2)) {
 
-// 	callback(callback2());
-// }
 
-function async emojifyMyText(callback) { // function name also used in emojify.html (change carefully)
+function emojifyMyText(callback) { // function name also used in emojify.html (change carefully)
 	console.log("start spinny thing");
 	$('#emojify-input').addClass('loadinggif');
 	console.log("spinny thing started");
@@ -134,6 +131,7 @@ function async emojifyMyText(callback) { // function name also used in emojify.h
 	}
 
 	callback();
+
 }
 
 function removeGif() {
