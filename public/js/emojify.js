@@ -122,18 +122,16 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 
 	if (!toggleState) { // REPLACE
-		// displayText(emojifyInputTextbox, replaceArray.join(" ").replace(/ +(\W)/g, "$1"));
 		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 	else { // ADD
-		// displayText(emojifyInputTextbox, replaceArray.join(" ").replace(/ +(\W)/g, "$1"));
-
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 
+	$('#emojify-input').removeClass('loadinggif');
+
 
 }
-
 
 function postStory() {
 	//TODO: Post to feed. 
