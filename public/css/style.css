@@ -235,8 +235,10 @@ hgroup {
 
 .speech-bubble { 
   position: relative; 
-  background: #ad00bb; 
+  background: var(--main-mid); 
   border-radius: .4em; 
+  margin-right: 5px;
+  height: 12px;
 } 
 
 .speech-bubble:after {
@@ -247,7 +249,7 @@ hgroup {
   width: 0; 
   height: 0; 
   border: 0.5em solid transparent; 
-  border-right-color: #ad00bb; 
+  border-right-color: var(--main-mid); 
   border-left: 0; 
   margin-top: -0.5em; 
   margin-left: -0.5em; 
