@@ -56,7 +56,7 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 
 
 
-function emojifyMyText(callback) { // function name also used in emojify.html (change carefully)
+function emojifyMyText() { // function name also used in emojify.html (change carefully)
 	console.log("start spinny thing");
 	$('#emojify-input').addClass('loadinggif');
 	console.log("spinny thing started");
@@ -130,15 +130,13 @@ function emojifyMyText(callback) { // function name also used in emojify.html (c
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 
-	callback();
-
-}
-
-function removeGif() {
 	console.log("ending spinny thing");
 	$('#emojify-input').removeClass('loadinggif');
 	console.log("spinny thing ended");
+
 }
+
+
 
 function postStory() {
 	//TODO: Post to feed. 
