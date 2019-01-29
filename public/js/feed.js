@@ -51,6 +51,7 @@ function storyDOMObject(storyJSON) {
       let tagName = document.createElement('hgroup');
       tagName.className="speech-bubble";
       let paragraph = document.createElement('p');
+      paragraph.className="tags";
       paragraph.innerHTML = storyJSON.tags[i];
       tagName.prepend(paragraph);
       cardTags.prepend(tagName);

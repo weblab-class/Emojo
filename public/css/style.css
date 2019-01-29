@@ -226,7 +226,11 @@ p {
 /*Stuff for Tags in feed and search*/
 
 hgroup {
-  display: inline;
+  display: inline-block;
+}
+
+.tags {
+  font-size: 12px;
 }
 
 .speech-bubble { 
