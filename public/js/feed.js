@@ -47,6 +47,8 @@ function storyDOMObject(storyJSON) {
 
   const cardTags = document.createElement('div');
   cardTags.innerText+="Tags: ";
+  cardTags.innerHTML+= "&nbsp;";
+
 
   for (let i=0; i<storyJSON.tags.length; i++) {
       let tagName = document.createElement('hgroup');
