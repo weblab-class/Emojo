@@ -67,11 +67,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	let emojifyInput = emojifyInputTextbox.value;
 	// console.log("user input: ", emojifyInput);
 	
-	console.log("loading");
-	emojifyInputTextbox.value = "Loading...";
+	loading(emojifyInputTextbox);
 
-	return; 
-	
+
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
 	// console.log("button checked: ", toggleState);
@@ -150,6 +148,11 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	}
 }
 
+function loading(textbox) {
+	console.log("loading");
+	textbox.value = "Loading...";
+	return;
+}
 
 function postStory() {
 	//TODO: Post to feed. 
