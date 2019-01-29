@@ -46,7 +46,9 @@ function storyDOMObject(storyJSON) {
   cardFooter.innerHTML=storyJSON.content;
 
   const cardTags = document.createElement('div');
-  cardTags+="Tags: ";
+  cardTags.innerText+="Tags: ";
+  cardTags.innerHTML+= "&nbsp;";
+
 
   for (let i=0; i<storyJSON.tags.length; i++) {
       let tagName = document.createElement('hgroup');
@@ -55,7 +57,7 @@ function storyDOMObject(storyJSON) {
       paragraph.className="tags";
       paragraph.innerHTML = storyJSON.tags[i];
       tagName.prepend(paragraph);
-      cardTags.prepend(tagName);
+      cardTags.appendChild(tagName);
   }
 
   cardContent.prepend(cardTags);
