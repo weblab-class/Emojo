@@ -129,6 +129,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	}
 
 	$('#emojify-input').removeClass('loadinggif');
+	return;
 
 
 }
