@@ -123,7 +123,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
 
 
+	console.log("writing in textbox");
 	if (!toggleState) { // REPLACE
+		
 		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 	else { // ADD
