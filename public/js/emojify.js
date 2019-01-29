@@ -53,17 +53,24 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 		  '\\|'+ '\\}'+ '\\~'+ '\\]' + '\\n';
 
 
-// FIXME make sure user gives page 2s to get emojiDB before clicking emojifyMyText
+// function displayText(textbox, text) { 
+// 	// finished: Boolean. true is emojified text is generated. False otherwise
+// 	// text	   : text to be displayed to textbox if finished
 
+// 	textbox.value = text;
 
-// trigger on button click
-// let emojifyBtn = document.getElementById("emojifyBtn");
+// }
+
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 
+	let finished = false; 
+	
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
 	
+	// displayText(emojifyInputTextbox, "Loading...");
+	emojifyInputTextbox.value = "Loading...";
 
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
@@ -115,17 +122,27 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 			replaceArray.push(elt);
 		}
 	}
+	finished = true;
+
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
 	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time) 
 	// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
 
-	if (!toggleState) { // REPLACE
-		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
+	if (finished) {
+		if (!toggleState) { // REPLACE
+			// displayText(emojifyInputTextbox, replaceArray.join(" ").replace(/ +(\W)/g, "$1"));
+			emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
+		}
+		else { // ADD
+			// displayText(emojifyInputTextbox, replaceArray.join(" ").replace(/ +(\W)/g, "$1"));
+	
+			emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
+		}
+	} else {
+		emojifyInputTextbox.value = "Loading...";
 	}
-	else { // ADD
-		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
-	}
+	
 }
 
 
