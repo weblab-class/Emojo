@@ -55,7 +55,7 @@ function storyDOMObject(storyJSON) {
       paragraph.className="tags";
       paragraph.innerHTML = storyJSON.tags[i];
       tagName.prepend(paragraph);
-      cardTags.prepend(tagName);
+      cardTags.appendChild(tagName);
   }
 
   cardContent.prepend(cardTags);
