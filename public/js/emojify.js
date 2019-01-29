@@ -128,7 +128,7 @@ function emojifyMyText(callback) { // function name also used in emojify.html (c
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 
-	callback();
+	// callback();
 	return;
 }
 
