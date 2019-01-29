@@ -223,7 +223,27 @@ p {
 	font-size: 23px;
 }
 
-/*Stuff for Search Bar*/
+/*Stuff for Tags in feed and search*/
+
+.speech-bubble { 
+  position: relative; 
+  background: #ad00bb; 
+  border-radius: .4em; 
+} 
+
+.speech-bubble:after {
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  top: 50%; 
+  width: 0; 
+  height: 0; 
+  border: 0.5em solid transparent; 
+  border-right-color: #ad00bb; 
+  border-left: 0; 
+  margin-top: -0.5em; 
+  margin-left: -0.5em; 
+}
 
 /*Stuff for tag input*/
 .choices__list--multiple .choices__item {
