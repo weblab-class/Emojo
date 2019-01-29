@@ -58,7 +58,7 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 	console.log("start spinny thing");
-	$('#emojify-input').addClass('loadinggif');
+	$('#emojify-page').addClass('loadinggif');
 	console.log("spinny thing started");
 
 	// get user plaintext
@@ -133,7 +133,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	}
 
 	console.log("ending spinny thing");
-	$('#emojify-input').removeClass('loadinggif');
+	$('#emojify-page').removeClass('loadinggif');
 	console.log("spinny thing ended");
 
 }
