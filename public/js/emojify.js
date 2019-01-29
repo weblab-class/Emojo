@@ -129,11 +129,11 @@ function emojifyMyText(callback) { // function name also used in emojify.html (c
 	}
 
 	// callback();
-	return;
 }
 
 function removeGif() {
 	$('#emojify-input').removeClass('loadinggif');
+
 }
 
 function postStory() {
