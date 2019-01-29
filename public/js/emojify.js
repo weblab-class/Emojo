@@ -19,6 +19,8 @@ function main() {
 	get('/api/emoji', {}, function(emojis) {
 		renderEmojiDB(emojis);
 	  });
+
+	
 }
 
 
@@ -112,7 +114,6 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 			replaceArray.push(elt);
 		}
 	}
-	finished = true;
 
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
@@ -129,9 +130,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
-	// $('#emojify-input').removeClass('loadinggif');
 
-	
+
 }
 
 
