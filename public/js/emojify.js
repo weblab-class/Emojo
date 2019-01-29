@@ -67,7 +67,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	let emojifyInput = emojifyInputTextbox.value;
 	// console.log("user input: ", emojifyInput);
 	
-	loading(emojifyInputTextbox);
+	// loading(emojifyInputTextbox);
 
 
 	// get toggle state: false = replace; true = add
@@ -93,6 +93,8 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 	for (let i = 0, len = emojifyInputArray.length; i < len; i++) {
 
+		console.log(i);
+		loading(emojifyInputTextbox);
 
 		let elt = emojifyInputArray[i];
 		// elt is word or punctuation
@@ -149,7 +151,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 }
 
 function loading(textbox) {
-	console.log("loading");
+	console.log("emojify loading");
 	textbox.value = "Loading...";
 	return;
 }
