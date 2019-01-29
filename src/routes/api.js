@@ -45,8 +45,14 @@ router.get('/user', function(req, res) {
 });
 
 router.get('/stories', function(req, res) {
-  console.log(req.query.topic);
   Story.find({}, function(err, stories) {
+    res.send(stories);
+  });
+});
+
+router.get('/search', function(req, res) {
+  //console.log(req.query.topic);
+  Story.find({tags: req.query.topic}, function(err, stories) {
     res.send(stories);
   });
 });

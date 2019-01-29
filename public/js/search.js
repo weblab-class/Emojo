@@ -60,7 +60,7 @@ function placePosts() {
 	}
 	let searchTopic = document.getElementById("emojify-input").value;
 	console.log(searchTopic);
-	get('/api/stories', {topic: searchTopic}, function(storiesArr) {
+	get('/api/search', {topic: searchTopic}, function(storiesArr) {
     for (let i = 0; i < storiesArr.length; i++) {
       const currentStory = storiesArr[i];
       storiesDiv.insertChildAtIndex(storyDOMObject(currentStory), 1);
