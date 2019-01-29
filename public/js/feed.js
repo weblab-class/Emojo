@@ -75,12 +75,9 @@ function placePosts() {
 	// while (storiesDiv.childNodes.length > 1) {
     //    storiesDiv.removeChild(storiesDiv.lastChild);
 	// }
-	console.log("calling stories function");
 	get('/api/stories', {}, function(storiesArr) {
-		console.log("getting stories");
     for (let i = 0; i < storiesArr.length; i++) {
       const currentStory = storiesArr[i];
-      console.log("there is a story");
       storiesDiv.insertChildAtIndex(storyDOMObject(currentStory), 1);
     }
    });

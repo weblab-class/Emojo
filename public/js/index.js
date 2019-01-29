@@ -2,6 +2,16 @@ function main() {
 	get('/api/whoami', {}, function(user) {
 		updateButton(user);
 	});
+
+	let quote =  document.getElementById('quoteInspire');
+
+	get('/api/stories', {}, function(storiesArr) {
+    	quote.innerHTML = storiesArr[getRndInteger(0, storiesArr.length)].content;
+    });
+}
+
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
 }
 
 function updateButton(user) {
