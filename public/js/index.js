@@ -6,7 +6,7 @@ function main() {
 	let quote =  document.getElementById('quoteInspire');
 
 	get('/api/stories', {}, function(storiesArr) {
-    	quote.value = storiesArr[getRndInteger(0, storiesArr.length)].content;
+    	quote.innerHTML = storiesArr[getRndInteger(0, storiesArr.length)].content;
     });
 }
 
