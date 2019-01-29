@@ -53,6 +53,7 @@ router.get('/stories', function(req, res) {
 router.get('/search', function(req, res) {
   //console.log(req.query.topic);
   Story.find({tags: req.query.topic}, function(err, stories) {
+    console.log("found the correct stories pleaseeeee!");
     res.send(stories);
   });
 });
