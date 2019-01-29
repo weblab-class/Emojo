@@ -132,9 +132,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 
-	console.log("ending spinny thing");
-	$('#emojify-page').removeClass('loadinggif');
-	console.log("spinny thing ended");
+	// console.log("ending spinny thing");
+	// $('#emojify-page').removeClass('loadinggif');
+	// console.log("spinny thing ended");
 
 }
 
