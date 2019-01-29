@@ -60,6 +60,7 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 
+
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
@@ -116,15 +117,19 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 		}
 	}
 
+
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
 	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time) 
 	// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
 
 	if (!toggleState) { // REPLACE
-		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
+		emojifyInputTextbox.value = "Loading...";
+
+		// emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 	else { // ADD
-		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
+		emojifyInputTextbox.value = "Loading...";
+		// emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 }
 
