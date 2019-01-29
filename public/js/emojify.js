@@ -60,12 +60,12 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 
-	emojifyInputTextbox.value = "Loading...";
 
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
 	
+	emojifyInputTextbox.value = "Loading...";
 
 	// get toggle state: false = replace; true = add
 	let toggleState = document.getElementById("toggle-box").checked;
