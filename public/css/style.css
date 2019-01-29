@@ -237,8 +237,8 @@ hgroup {
   position: relative; 
   background: var(--main-mid); 
   border-radius: .4em; 
-  margin-right: 5px;
-  height: 12px;
+  margin-right: 10px;
+  height: 20px;
 } 
 
 .speech-bubble:after {
