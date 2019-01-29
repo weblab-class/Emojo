@@ -60,6 +60,7 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
 
+	emojifyInputTextbox.value = "Loading...";
 
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
@@ -123,12 +124,12 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// regex source: https://stackoverflow.com/questions/20047387/remove-space-before-punctuation-javascript-jquery
 
 	if (!toggleState) { // REPLACE
-		emojifyInputTextbox.value = "Loading...";
+		// 
 
 		// emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 	else { // ADD
-		emojifyInputTextbox.value = "Loading...";
+		// emojifyInputTextbox.value = "Loading...";
 		// emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 }
