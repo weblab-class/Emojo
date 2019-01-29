@@ -61,6 +61,14 @@ var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript do
 // trigger on button click
 // let emojifyBtn = document.getElementById("emojifyBtn");
 function emojifyMyText() { // function name also used in emojify.html (change carefully)
+	let finished = false; // while !finished, display "Loading..."
+
+	while (!finishied) {
+		emojifyInputTextbox.value = "Loading...";
+	}
+
+
+
 	// get user plaintext
 	let emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
@@ -126,6 +134,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 			replaceArray.push(elt);
 		}
 	}
+	finished = true;
 
 	// TODO: dropdown list of highest ranking emoji / emoji with partial ratio = 100
 	// TODO：when button is toggled / switch text in real time (both texts generated ahead of time)
