@@ -1,4 +1,13 @@
 // Code for Updating login/logout button //
+var textRemove;
+document.addEventListener('DOMContentLoaded', function() {
+        textRemove = new Choices(document.getElementById('choices-text-remove-button'), {
+        delimiter: ',',
+        editItems: true,
+        maxItemCount: 10,
+        removeItemButton: true,
+      });
+    });
 
 function main() {
 	get('/api/whoami', {}, function(user) {
@@ -154,8 +163,9 @@ function postStory() {
 		tags: tagsArray
 	};
 	if (window.user._id !== undefined) {
-		post('/api/story', data);
+		///post('/api/story', data);
 		document.getElementById("emojify-input").value="";
+		textRemove.removeActiveItems();
 		//TODO Does not work properly with the tags input object
 		//document.getElementById('choices-text-remove-button').value="";
 		alert("You posted Successfully🔥🔥🔥, see your new post🔥🔥🔥 in the FEED or SEARCH page🔥🔥🔥!!!")
