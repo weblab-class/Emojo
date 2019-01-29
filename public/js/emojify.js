@@ -42,7 +42,7 @@ var punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript do
 		  '\\.'+ '\\/'+ '\\:'+ '\\;'+ '\\<'+              // own version of [:punct:]
 		  '\\='+ '\\>'+ '\\?'+ '\\@'+ '\\['+
 		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
-		  '\\|'+ '\\}'+ '\\~'+ '\\]';
+		  '\\|'+ '\\}'+ '\\~'+ '\\]' + '\\n';
 
 
 // FIXME make sure user gives page 2s to get emojiDB before clicking emojifyMyText
@@ -91,25 +91,17 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 
 			for (let j = 0, lenEmoji = window.emojis.length; j < lenEmoji; j++) {
 				let emojiDoc = window.emojis[j];
-				// console.log("emojiDoc: ", emojiDoc);
 				for (let k = 0, lenKey = emojiDoc['keywords'].length; k < lenKey; k++) {
 					let keyword = emojiDoc['keywords'][k];
-					// console.log("keyword: ", keyword);
 					// match_partial_ratio = fuzzball.partial_ratio(elt, keyword);
 					match_ratio = fuzzball.ratio(elt, keyword);
-					// TODO generate array of all emoji who fit criteria for word
 					if (match_ratio > 90) { // FIXME choose emoji with highest score
-						// console.log(" ratio: ", match_ratio);
-
-						// console.log("add character", emojiDoc['character']);
 						addArray.push(emojiDoc['character']);
-					
 						replaceArray.push(emojiDoc['character']);
 						emojiFound = true;
 						break; // use the 1st emoji that matches word
 					}
 				}
-
 				if (emojiFound) { // break out of the emojis loop & go to next word
 					break;
 				}
@@ -119,9 +111,9 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 		if (!emojiFound) {
 			replaceArray.push(elt)
 		}
-		} else { // elt is punctuation
+		} 
+		else { // elt is punctuation
 			replaceArray.push(elt);
-
 		}
 	}
 
@@ -130,7 +122,7 @@ function emojifyMyText() { // function name also used in emojify.html (change ca
 	// IF REPLACE 
 	if (!toggleState) {
 		// FIXME: concat(ReplaceArray)
-		emojifyInputTextbox.value = replaceArray.join(" ")/*.replace(/ +(\W)/g, "$1")*/;
+		emojifyInputTextbox.value = replaceArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 	// IF ADD
 	else {
