@@ -54,13 +54,16 @@ const punct='\\['+ '\\!'+ '\\"'+ '\\#'+ '\\$'+              // since javascript 
 		  '\\]'+ '\\^'+ '\\_'+ '\\`'+ '\\{'+
 		  '\\|'+ '\\}'+ '\\~'+ '\\]' + '\\n';
 
-// function start(callback) {
-// 	$('#emojify-input').addClass('loadinggif');
-// 	callback();
+// function start(callback(callback2)) {
+
+// 	callback(callback2());
 // }
 
-function emojifyMyText(/*callback*/) { // function name also used in emojify.html (change carefully)
-	
+function async emojifyMyText(callback) { // function name also used in emojify.html (change carefully)
+	console.log("start spinny thing");
+	$('#emojify-input').addClass('loadinggif');
+	console.log("spinny thing started");
+
 	// get user plaintext
 	const emojifyInputTextbox = document.getElementById("emojify-input");
 	let emojifyInput = emojifyInputTextbox.value;
@@ -130,12 +133,14 @@ function emojifyMyText(/*callback*/) { // function name also used in emojify.htm
 		emojifyInputTextbox.value = addArray.join(" ").replace(/ +(\W)/g, "$1");
 	}
 
-	// callback();
+	callback();
 }
 
-// function removeGif() {
-// 	$('#emojify-input').removeClass('loadinggif');
-// }
+function removeGif() {
+	console.log("ending spinny thing");
+	$('#emojify-input').removeClass('loadinggif');
+	console.log("spinny thing ended");
+}
 
 function postStory() {
 	//TODO: Post to feed. 
