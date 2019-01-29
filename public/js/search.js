@@ -60,12 +60,9 @@ function placePosts() {
 	}
 	let searchTopic = document.getElementById("emojify-input").value;
 	console.log(searchTopic);
-	console.log("calling stories SEARCHfunction");
 	get('/api/stories', {topic: searchTopic}, function(storiesArr) {
-		console.log("getting sSEARCHtories");
     for (let i = 0; i < storiesArr.length; i++) {
       const currentStory = storiesArr[i];
-      console.log("therSEARCHe is a story");
       storiesDiv.insertChildAtIndex(storyDOMObject(currentStory), 1);
     }
     });
